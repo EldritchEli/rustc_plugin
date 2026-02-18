@@ -22,6 +22,7 @@ pub use plugin::{CrateFilter, RustcPlugin, RustcPluginArgs};
 pub const CHANNEL: &str = env!("RUSTC_CHANNEL");
 
 mod build;
+mod build_commands;
 mod cli;
 mod driver;
 mod plugin;

@@ -100,6 +100,7 @@ impl rustc_driver::Callbacks for DefaultCallbacks {}
 
 /// The top-level function that should be called by your internal driver binary.
 pub fn driver_main<T: RustcPlugin>(plugin: T) {
+  //println!("runnin main driver");
   let early_dcx = EarlyDiagCtxt::new(ErrorOutputType::default());
   rustc_driver::init_rustc_env_logger(&early_dcx);
 
@@ -138,6 +139,7 @@ pub fn driver_main<T: RustcPlugin>(plugin: T) {
     let primary_package = env::var("CARGO_PRIMARY_PACKAGE").is_ok();
     let run_on_all_crates = env::var(RUN_ON_ALL_CRATES).is_ok();
     let normal_rustc = arg_value(&args, "--print", |_| true).is_some();
+    //println!("args: {:?}", args);
     let is_target_crate = is_target_crate(&args);
     let run_plugin =
       !normal_rustc && (run_on_all_crates || primary_package) && is_target_crate;

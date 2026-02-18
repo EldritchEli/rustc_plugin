@@ -7,7 +7,7 @@ use std::{
 use cargo_metadata::camino::Utf8Path;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
-use crate::CrateFilter;
+use crate::{CrateFilter, build_commands::CargoBuildCommand};
 
 pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
 pub const SPECIFIC_CRATE: &str = "SPECIFIC_CRATE";
@@ -20,6 +20,7 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
     println!("{}", plugin.version());
     return;
   }
+  let default_build = !env::args().any(|arg| arg.parse::<CargoBuildCommand>().is_ok());
 
   let metadata = cargo_metadata::MetadataCommand::new()
     .no_deps()
@@ -27,6 +28,7 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
     .exec()
     .unwrap();
   let plugin_subdir = format!("plugin-{}", crate::CHANNEL);
+  println!("plugin_subdir: {:?}", plugin_subdir);
   let target_dir = metadata.target_directory.join(plugin_subdir);
 
   let args = plugin.args(&target_dir);
@@ -37,21 +39,26 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
   let mut path = env::current_exe()
     .expect("current executable path invalid")
     .with_file_name(plugin.driver_name().as_ref());
-
+  dbg!(&path);
   if cfg!(windows) {
     path.set_extension("exe");
   }
 
-  cmd
-    .env("RUSTC_WORKSPACE_WRAPPER", path)
-    .args(["check", "--target-dir"])
-    .arg(&target_dir);
+  cmd.env("RUSTC_WORKSPACE_WRAPPER", path);
+  if default_build {
+    eprintln!("error: failed to find cargo build command. defaulting to check");
+    cmd.arg("check");
+  } else {
+    plugin.modify_cargo(&mut cmd, &args.args);
+  }
+  cmd.arg("--target-dir").arg(&target_dir);
 
-  if env::var(CARGO_VERBOSE).is_ok() {
+  /*  if env::var(CARGO_VERBOSE).is_ok() {
     cmd.arg("-vv");
   } else {
     cmd.arg("-q");
   }
+  */
 
   let workspace_members = metadata
     .workspace_members
@@ -70,7 +77,7 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
       only_run_on_file(&mut cmd, file_path, &workspace_members, &target_dir);
     }
     CrateFilter::AllCrates | CrateFilter::OnlyWorkspace => {
-      cmd.arg("--all");
+      //cmd.arg("--all");
       match args.filter {
         CrateFilter::AllCrates => {
           cmd.env(RUN_ON_ALL_CRATES, "");
@@ -91,8 +98,7 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
     cmd.env("CFG_RELEASE", "");
   }
 
-  plugin.modify_cargo(&mut cmd, &args.args);
-
+  println!("final command: {:?}", cmd);
   let exit_status = cmd.status().expect("failed to wait for cargo?");
 
   exit(exit_status.code().unwrap_or(-1));
@@ -104,6 +110,7 @@ fn only_run_on_file(
   workspace_members: &[&cargo_metadata::Package],
   target_dir: &Utf8Path,
 ) {
+  println!("running on single file");
   // We compare this against canonicalized paths, so it must be canonicalized too
   let file_path = file_path.canonicalize().unwrap();
 
@@ -213,6 +220,7 @@ fn only_run_on_file(
     CompileKind::Bin => {
       cmd.args(["--bin", &target.name]);
     }
+
     CompileKind::ProcMacro => {}
     CompileKind::Example => {
       cmd.args(["--example", &target.name]);

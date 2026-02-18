@@ -23,12 +23,9 @@ pub struct RustcPluginArgs<Args> {
   /// Which crates you want to run the plugin on.
   pub filter: CrateFilter,
 }
-
-/// Interface between your plugin and the rustc_plugin framework.
 pub trait RustcPlugin: Sized {
   /// Command-line arguments passed by the user.
   type Args: Serialize + DeserializeOwned;
-
   /// Returns the version of your plugin.
   ///
   /// A sensible default is your plugin's Cargo version:

@@ -1,0 +1,2549 @@
+plugin_subdir: "plugin-nightly-2025-08-20"
+cargo args: []
+There is an item "std" of type "extern crate"
+There is an item of type "import"
+There is an item "either" of type "extern crate"
+There is an item "rustc_abi" of type "extern crate"
+There is an item "rustc_borrowck" of type "extern crate"
+There is an item "rustc_data_structures" of type "extern crate"
+There is an item "rustc_driver" of type "extern crate"
+There is an item "rustc_errors" of type "extern crate"
+There is an item "rustc_graphviz" of type "extern crate"
+There is an item "rustc_hir" of type "extern crate"
+There is an item "rustc_index" of type "extern crate"
+There is an item "rustc_infer" of type "extern crate"
+There is an item "rustc_interface" of type "extern crate"
+There is an item "rustc_lint_defs" of type "extern crate"
+There is an item "rustc_macros" of type "extern crate"
+There is an item "rustc_middle" of type "extern crate"
+There is an item "rustc_mir_dataflow" of type "extern crate"
+There is an item "rustc_mir_transform" of type "extern crate"
+There is an item "rustc_serialize" of type "extern crate"
+There is an item "rustc_session" of type "extern crate"
+There is an item "rustc_span" of type "extern crate"
+There is an item "rustc_target" of type "extern crate"
+There is an item "rustc_trait_selection" of type "extern crate"
+There is an item "rustc_type_ir" of type "extern crate"
+There is an item "smallvec" of type "extern crate"
+There is an item "cache" of type "module"
+There is an item of type "import"
+There is an item "RefCell" of type "import"
+There is an item "Hash" of type "import"
+There is an item "Pin" of type "import"
+There is an item "HashMap" of type "import"
+There is an item "Cache" of type "struct"
+There is an item of type "implementation"
+There is an item "recursion_panic" of type "function"
+There is an item of type "implementation"
+There is an item "CopyCache" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "hir" of type "module"
+There is an item "ty" of type "module"
+There is an item "DefId" of type "import"
+There is an item "TyCtxtInferExt" of type "import"
+There is an item of type "import"
+There is an item "GenericArgKind" of type "import"
+There is an item "ParamEnv" of type "import"
+There is an item "Region" of type "import"
+There is an item "Ty" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "TypingEnv" of type "import"
+There is an item "InferCtxtExt" of type "import"
+There is an item "TypingMode" of type "import"
+There is an item "TyExt" of type "trait"
+There is an item of type "implementation"
+There is an item "EvaluationResult" of type "import"
+There is an item "mir" of type "module"
+There is an item "adt_def" of type "module"
+There is an item "DefId" of type "import"
+There is an item of type "import"
+There is an item "AdtDef" of type "import"
+There is an item "FieldDef" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "AdtDefExt" of type "trait"
+There is an item of type "implementation"
+There is an item "body" of type "module"
+There is an item of type "import"
+There is an item "Write" of type "import"
+There is an item "Path" of type "import"
+There is an item of type "import"
+There is an item "Command" of type "import"
+There is an item "Stdio" of type "import"
+There is an item of type "import"
+There is an item "Result" of type "import"
+There is an item "ensure" of type "import"
+There is an item "PrettyPrintMirOptions" of type "import"
+There is an item "HashMap" of type "import"
+There is an item of type "import"
+There is an item "CoroutineDesugaring" of type "import"
+There is an item "CoroutineKind" of type "import"
+There is an item "HirId" of type "import"
+There is an item "DefId" of type "import"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "BasicBlock" of type "import"
+There is an item "Body" of type "import"
+There is an item "Local" of type "import"
+There is an item "Location" of type "import"
+There is an item "Place" of type "import"
+There is an item "SourceInfo" of type "import"
+There is an item "TerminatorKind" of type "import"
+There is an item "VarDebugInfoContents" of type "import"
+There is an item "pretty" of type "import"
+There is an item "write_mir_fn" of type "import"
+There is an item of type "import"
+There is an item "Region" of type "import"
+There is an item "Ty" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "SmallVec" of type "import"
+There is an item "ControlDependencies" of type "import"
+There is an item of type "import"
+There is an item "PlaceExt" of type "import"
+There is an item "TyExt" of type "import"
+There is an item "BodyExt" of type "trait"
+There is an item of type "implementation"
+There is an item "run_dot" of type "function"
+There is an item "borrowck_facts" of type "module"
+There is an item of type "import"
+There is an item "AtomicBool" of type "import"
+There is an item "Ordering" of type "import"
+There is an item of type "import"
+There is an item "BodyWithBorrowckFacts" of type "import"
+There is an item "ConsumerOptions" of type "import"
+There is an item "HashSet" of type "import"
+There is an item "LocalDefId" of type "import"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "Body" of type "import"
+There is an item "ConcreteOpaqueTypes" of type "import"
+There is an item "StatementKind" of type "import"
+There is an item "TerminatorKind" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "Providers" of type "import"
+There is an item "ErrorGuaranteed" of type "import"
+There is an item of type "import"
+There is an item "BodyExt" of type "import"
+There is an item "block_timer" of type "import"
+There is an item "Cache" of type "import"
+There is an item "simplify_mir" of type "function"
+There is an item "SIMPLIFY_MIR" of type "static"
+There is an item "enable_mir_simplification" of type "function"
+There is an item "override_queries" of type "function"
+There is an item "MIR_BODIES" of type "constant"
+There is an item "__init" of type "function"
+There is an item "VAL" of type "static"
+There is an item "VAL" of type "static"
+There is an item "mir_borrowck" of type "function"
+There is an item "get_body_with_borrowck_facts" of type "function"
+There is an item "control_dependencies" of type "module"
+There is an item "fmt" of type "import"
+There is an item of type "import"
+There is an item "ControlFlowGraph" of type "import"
+There is an item "DirectedGraph" of type "import"
+There is an item "Predecessors" of type "import"
+There is an item "StartNode" of type "import"
+There is an item "Successors" of type "import"
+There is an item "dominators" of type "import"
+There is an item "Dominators" of type "import"
+There is an item "iterate" of type "import"
+There is an item "VecGraph" of type "import"
+There is an item of type "import"
+There is an item "Idx" of type "import"
+There is an item of type "import"
+There is an item "DenseBitSet" of type "import"
+There is an item "MixedBitSet" of type "import"
+There is an item "SparseBitMatrix" of type "import"
+There is an item "SmallVec" of type "import"
+There is an item "ReversedGraph" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "PostDominators" of type "struct"
+There is an item of type "implementation"
+There is an item "ControlDependencies" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "location_or_arg" of type "module"
+There is an item "Either" of type "import"
+There is an item of type "import"
+There is an item "Body" of type "import"
+There is an item "Local" of type "import"
+There is an item "Location" of type "import"
+There is an item "Place" of type "import"
+There is an item "PlaceExt" of type "import"
+There is an item "LocationOrArg" of type "enum"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "mutability" of type "module"
+There is an item "Mutability" of type "import"
+There is an item "MutabilityExt" of type "trait"
+There is an item of type "implementation"
+There is an item "operand" of type "module"
+There is an item of type "import"
+There is an item "Operand" of type "import"
+There is an item "Place" of type "import"
+There is an item "OperandExt" of type "trait"
+There is an item of type "implementation"
+There is an item "place" of type "module"
+There is an item of type "import"
+There is an item "Cow" of type "import"
+There is an item "VecDeque" of type "import"
+There is an item of type "import"
+There is an item "trace" of type "import"
+There is an item "warn" of type "import"
+There is an item of type "import"
+There is an item "FieldIdx" of type "import"
+There is an item "VariantIdx" of type "import"
+There is an item of type "import"
+There is an item "HashMap" of type "import"
+There is an item "HashSet" of type "import"
+There is an item "DefId" of type "import"
+There is an item "TyCtxtInferExt" of type "import"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "Body" of type "import"
+There is an item "HasLocalDecls" of type "import"
+There is an item "Local" of type "import"
+There is an item "Location" of type "import"
+There is an item "Mutability" of type "import"
+There is an item "Place" of type "import"
+There is an item "PlaceElem" of type "import"
+There is an item "PlaceRef" of type "import"
+There is an item "ProjectionElem" of type "import"
+There is an item "RETURN_PLACE" of type "import"
+There is an item "VarDebugInfo" of type "import"
+There is an item "VarDebugInfoContents" of type "import"
+There is an item of type "import"
+There is an item "PlaceContext" of type "import"
+There is an item "Visitor" of type "import"
+There is an item "ObligationCause" of type "import"
+There is an item of type "import"
+There is an item "ty" of type "import"
+There is an item "AdtKind" of type "import"
+There is an item "Region" of type "import"
+There is an item "RegionKind" of type "import"
+There is an item "RegionVid" of type "import"
+There is an item "Ty" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "TyKind" of type "import"
+There is an item "TypeVisitor" of type "import"
+There is an item "NormalizeExt" of type "import"
+There is an item "TypingMode" of type "import"
+There is an item of type "import"
+There is an item "AdtDefExt" of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "PlaceCollector" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "PlaceExt" of type "trait"
+There is an item of type "implementation"
+There is an item "ElemPosition" of type "enum"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "StoppingCondition" of type "enum"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "RegionVisitorDispatcher" of type "trait"
+There is an item "VisitedPlacesCollector" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "RegionMemberCollector" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "RegionVisitor" of type "struct"
+There is an item of type "implementation"
+There is an item "UNKNOWN_REGION" of type "constant"
+There is an item of type "implementation"
+There is an item "source_map" of type "module"
+There is an item "filename" of type "module"
+There is an item "PathBuf" of type "import"
+There is an item "Filename" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "FilenameIndex" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "find_bodies" of type "module"
+There is an item "trace" of type "import"
+There is an item of type "import"
+There is an item "BodyId" of type "import"
+There is an item "Visitor" of type "import"
+There is an item of type "import"
+There is an item "OnlyBodies" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item "Span" of type "import"
+There is an item of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "block_timer" of type "import"
+There is an item "BodyFinder" of type "struct"
+There is an item of type "implementation"
+There is an item "find_bodies" of type "function"
+There is an item "find_enclosing_bodies" of type "function"
+There is an item "range" of type "module"
+There is an item of type "import"
+There is an item "RefCell" of type "import"
+There is an item "Entry" of type "import"
+There is an item "Default" of type "import"
+There is an item "OsStr" of type "import"
+There is an item "PathBuf" of type "import"
+There is an item "Arc" of type "import"
+There is an item of type "import"
+There is an item "Context" of type "import"
+There is an item "Result" of type "import"
+There is an item "bail" of type "import"
+There is an item "ensure" of type "import"
+There is an item "HashMap" of type "import"
+There is an item of type "import"
+There is an item "BodyId" of type "import"
+There is an item of type "import"
+There is an item "intravisit" of type "import"
+There is an item "Visitor" of type "import"
+There is an item "IndexVec" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item of type "import"
+There is an item "FileName" of type "import"
+There is an item "RealFileName" of type "import"
+There is an item "SourceFile" of type "import"
+There is an item "Span" of type "import"
+There is an item "SourceMap" of type "import"
+There is an item of type "import"
+There is an item "Filename" of type "import"
+There is an item "FilenameIndex" of type "import"
+There is an item "Cache" of type "import"
+There is an item "CharByteMapping" of type "struct"
+There is an item of type "implementation"
+There is an item "check_insert" of type "macro"
+There is an item "RangeContext" of type "struct"
+There is an item of type "implementation"
+There is an item "CONTEXT" of type "constant"
+There is an item "__init" of type "function"
+There is an item "VAL" of type "static"
+There is an item "VAL" of type "static"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "BytePos" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "CharPos" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "ByteRange" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "CharRange" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "ToSpan" of type "trait"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "qpath_to_span" of type "function"
+There is an item "Finder" of type "struct"
+There is an item of type "implementation"
+There is an item "FunctionIdentifier" of type "enum"
+There is an item of type "implementation"
+There is an item "span" of type "module"
+There is an item "cmp" of type "import"
+There is an item "trace" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item of type "import"
+There is an item "BytePos" of type "import"
+There is an item "Pos" of type "import"
+There is an item "Span" of type "import"
+There is an item "SpanData" of type "import"
+There is an item "SyntaxContext" of type "import"
+There is an item "SourceMap" of type "import"
+There is an item "SpanExt" of type "trait"
+There is an item of type "implementation"
+There is an item "SpanDataExt" of type "trait"
+There is an item of type "implementation"
+There is an item "spanner" of type "module"
+There is an item "Either" of type "import"
+There is an item "trace" of type "import"
+There is an item of type "import"
+There is an item "hir" of type "import"
+There is an item "BodyId" of type "import"
+There is an item "ExprKind" of type "import"
+There is an item "MatchSource" of type "import"
+There is an item "Node" of type "import"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "mir" of type "import"
+There is an item "Body" of type "import"
+There is an item "RETURN_PLACE" of type "import"
+There is an item "StatementKind" of type "import"
+There is an item "TerminatorKind" of type "import"
+There is an item "MirVisitor" of type "import"
+There is an item "TyCtxt" of type "import"
+There is an item of type "import"
+There is an item "Span" of type "import"
+There is an item "SpanData" of type "import"
+There is an item "Spanned" of type "import"
+There is an item "EnclosingHirSpans" of type "import"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "MirSpanCollector" of type "import"
+There is an item "MirSpannedPlace" of type "import"
+There is an item "SpanTree" of type "import"
+There is an item of type "import"
+There is an item "BodyExt" of type "import"
+There is an item "SpanDataExt" of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "LocationOrArg" of type "import"
+There is an item "hir_span" of type "module"
+There is an item of type "import"
+There is an item "HirId" of type "import"
+There is an item "LoopSource" of type "import"
+There is an item of type "import"
+There is an item "hir" of type "import"
+There is an item "ExprKind" of type "import"
+There is an item "MatchSource" of type "import"
+There is an item "Node" of type "import"
+There is an item of type "import"
+There is an item "intravisit" of type "import"
+There is an item "HirVisitor" of type "import"
+There is an item of type "import"
+There is an item "BytePos" of type "import"
+There is an item "Span" of type "import"
+There is an item "Spanner" of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "ChildExprSpans" of type "struct"
+There is an item of type "implementation"
+There is an item "EnclosingHirSpans" of type "enum"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "try_span" of type "macro"
+There is an item of type "implementation"
+There is an item "mir_span" of type "module"
+There is an item "Either" of type "import"
+There is an item "trace" of type "import"
+There is an item of type "import"
+There is an item "mir" of type "import"
+There is an item "Body" of type "import"
+There is an item "FakeReadCause" of type "import"
+There is an item "HasLocalDecls" of type "import"
+There is an item "Place" of type "import"
+There is an item "RETURN_PLACE" of type "import"
+There is an item "Statement" of type "import"
+There is an item "StatementKind" of type "import"
+There is an item "Terminator" of type "import"
+There is an item "TerminatorKind" of type "import"
+There is an item of type "import"
+There is an item "MutatingUseContext" of type "import"
+There is an item "NonMutatingUseContext" of type "import"
+There is an item "NonUseContext" of type "import"
+There is an item "PlaceContext" of type "import"
+There is an item "MirVisitor" of type "import"
+There is an item "SpanData" of type "import"
+There is an item of type "import"
+There is an item "SmallVec" of type "import"
+There is an item "smallvec" of type "import"
+There is an item "Spanner" of type "import"
+There is an item of type "import"
+There is an item "BodyExt" of type "import"
+There is an item "PlaceExt" of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "LocationOrArg" of type "import"
+There is an item "MirSpannedPlace" of type "struct"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item of type "implementation"
+There is an item "MirSpanCollector" of type "struct"
+There is an item "try_span" of type "macro"
+There is an item of type "implementation"
+There is an item "assigning_locations" of type "function"
+There is an item "span_tree" of type "module"
+There is an item "IntervalTree" of type "import"
+There is an item of type "import"
+There is an item "BytePos" of type "import"
+There is an item "SpanData" of type "import"
+There is an item "Spanned" of type "import"
+There is an item "SpanTree" of type "struct"
+There is an item of type "implementation"
+There is an item "Spanner" of type "struct"
+There is an item of type "implementation"
+There is an item "add_first_matching" of type "macro"
+There is an item "timer" of type "module"
+There is an item "Instant" of type "import"
+There is an item "info" of type "import"
+There is an item "elapsed" of type "function"
+There is an item "BlockTimer" of type "struct"
+There is an item of type "implementation"
+There is an item "block_timer" of type "macro"
+There is an item of type "import"
+There is an item "TyExt" of type "import"
+There is an item of type "import"
+There is an item "AdtDefExt" of type "import"
+There is an item "BodyExt" of type "import"
+There is an item "MutabilityExt" of type "import"
+There is an item "OperandExt" of type "import"
+There is an item "PlaceExt" of type "import"
+There is an item of type "import"
+There is an item "SpanDataExt" of type "import"
+There is an item "SpanExt" of type "import"
+There is an item "hashset" of type "macro"
+Expr {
+    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).7),
+    kind: Match(
+        Expr {
+            hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).36),
+            kind: Call(
+                Expr {
+                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).35),
+                    kind: Path(
+                        LangItem(
+                            TryTraitBranch,
+                            crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                        ),
+                    ),
+                    span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                },
+                [
+                    Expr {
+                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).8),
+                        kind: MethodCall(
+                            PathSegment {
+                                ident: spawn#0,
+                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).9),
+                                res: Err,
+                                args: None,
+                                infer_args: true,
+                            },
+                            Expr {
+                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).10),
+                                kind: MethodCall(
+                                    PathSegment {
+                                        ident: stdin#0,
+                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).11),
+                                        res: Err,
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                    Expr {
+                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).12),
+                                        kind: MethodCall(
+                                            PathSegment {
+                                                ident: args#0,
+                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).13),
+                                                res: Err,
+                                                args: None,
+                                                infer_args: true,
+                                            },
+                                            Expr {
+                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).14),
+                                                kind: Call(
+                                                    Expr {
+                                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).15),
+                                                        kind: Path(
+                                                            TypeRelative(
+                                                                Ty {
+                                                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).17),
+                                                                    span: crates/rustc_utils/src/mir/body.rs:188:15: 188:22 (#0),
+                                                                    kind: Path(
+                                                                        Resolved(
+                                                                            None,
+                                                                            Path {
+                                                                                span: crates/rustc_utils/src/mir/body.rs:188:15: 188:22 (#0),
+                                                                                res: Def(
+                                                                                    Struct,
+                                                                                    DefId(1:5881 ~ std[511f]::process::Command),
+                                                                                ),
+                                                                                segments: [
+                                                                                    PathSegment {
+                                                                                        ident: Command#0,
+                                                                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).16),
+                                                                                        res: Def(
+                                                                                            Struct,
+                                                                                            DefId(1:5881 ~ std[511f]::process::Command),
+                                                                                        ),
+                                                                                        args: None,
+                                                                                        infer_args: true,
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ),
+                                                                    ),
+                                                                },
+                                                                PathSegment {
+                                                                    ident: new#0,
+                                                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).18),
+                                                                    res: Err,
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                            ),
+                                                        ),
+                                                        span: crates/rustc_utils/src/mir/body.rs:188:15: 188:27 (#0),
+                                                    },
+                                                    [
+                                                        Expr {
+                                                            hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).19),
+                                                            kind: Lit(
+                                                                Spanned {
+                                                                    node: Str(
+                                                                        "dot",
+                                                                        Cooked,
+                                                                    ),
+                                                                    span: crates/rustc_utils/src/mir/body.rs:188:28: 188:33 (#0),
+                                                                },
+                                                            ),
+                                                            span: crates/rustc_utils/src/mir/body.rs:188:28: 188:33 (#0),
+                                                        },
+                                                    ],
+                                                ),
+                                                span: crates/rustc_utils/src/mir/body.rs:188:15: 188:34 (#0),
+                                            },
+                                            [
+                                                Expr {
+                                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).20),
+                                                    kind: Array(
+                                                        [
+                                                            Expr {
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).21),
+                                                                kind: Lit(
+                                                                    Spanned {
+                                                                        node: Str(
+                                                                            "-Tpdf",
+                                                                            Cooked,
+                                                                        ),
+                                                                        span: crates/rustc_utils/src/mir/body.rs:189:12: 189:19 (#0),
+                                                                    },
+                                                                ),
+                                                                span: crates/rustc_utils/src/mir/body.rs:189:12: 189:19 (#0),
+                                                            },
+                                                            Expr {
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).22),
+                                                                kind: Lit(
+                                                                    Spanned {
+                                                                        node: Str(
+                                                                            "-o",
+                                                                            Cooked,
+                                                                        ),
+                                                                        span: crates/rustc_utils/src/mir/body.rs:189:21: 189:25 (#0),
+                                                                    },
+                                                                ),
+                                                                span: crates/rustc_utils/src/mir/body.rs:189:21: 189:25 (#0),
+                                                            },
+                                                            Expr {
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).23),
+                                                                kind: AddrOf(
+                                                                    Ref,
+                                                                    Not,
+                                                                    Expr {
+                                                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).24),
+                                                                        kind: MethodCall(
+                                                                            PathSegment {
+                                                                                ident: to_string#0,
+                                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).25),
+                                                                                res: Err,
+                                                                                args: None,
+                                                                                infer_args: true,
+                                                                            },
+                                                                            Expr {
+                                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).26),
+                                                                                kind: MethodCall(
+                                                                                    PathSegment {
+                                                                                        ident: display#0,
+                                                                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).27),
+                                                                                        res: Err,
+                                                                                        args: None,
+                                                                                        infer_args: true,
+                                                                                    },
+                                                                                    Expr {
+                                                                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).28),
+                                                                                        kind: Path(
+                                                                                            Resolved(
+                                                                                                None,
+                                                                                                Path {
+                                                                                                    span: crates/rustc_utils/src/mir/body.rs:189:28: 189:32 (#0),
+                                                                                                    res: Local(
+                                                                                                        HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).2),
+                                                                                                    ),
+                                                                                                    segments: [
+                                                                                                        PathSegment {
+                                                                                                            ident: path#0,
+                                                                                                            hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).29),
+                                                                                                            res: Local(
+                                                                                                                HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).2),
+                                                                                                            ),
+                                                                                                            args: None,
+                                                                                                            infer_args: true,
+                                                                                                        },
+                                                                                                    ],
+                                                                                                },
+                                                                                            ),
+                                                                                        ),
+                                                                                        span: crates/rustc_utils/src/mir/body.rs:189:28: 189:32 (#0),
+                                                                                    },
+                                                                                    [],
+                                                                                    crates/rustc_utils/src/mir/body.rs:189:33: 189:42 (#0),
+                                                                                ),
+                                                                                span: crates/rustc_utils/src/mir/body.rs:189:28: 189:42 (#0),
+                                                                            },
+                                                                            [],
+                                                                            crates/rustc_utils/src/mir/body.rs:189:43: 189:54 (#0),
+                                                                        ),
+                                                                        span: crates/rustc_utils/src/mir/body.rs:189:28: 189:54 (#0),
+                                                                    },
+                                                                ),
+                                                                span: crates/rustc_utils/src/mir/body.rs:189:27: 189:54 (#0),
+                                                            },
+                                                        ],
+                                                    ),
+                                                    span: crates/rustc_utils/src/mir/body.rs:189:11: 189:55 (#0),
+                                                },
+                                            ],
+                                            crates/rustc_utils/src/mir/body.rs:189:6: 189:56 (#0),
+                                        ),
+                                        span: crates/rustc_utils/src/mir/body.rs:188:15: 189:56 (#0),
+                                    },
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).30),
+                                            kind: Call(
+                                                Expr {
+                                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).31),
+                                                    kind: Path(
+                                                        TypeRelative(
+                                                            Ty {
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).33),
+                                                                span: crates/rustc_utils/src/mir/body.rs:190:12: 190:17 (#0),
+                                                                kind: Path(
+                                                                    Resolved(
+                                                                        None,
+                                                                        Path {
+                                                                            span: crates/rustc_utils/src/mir/body.rs:190:12: 190:17 (#0),
+                                                                            res: Def(
+                                                                                Struct,
+                                                                                DefId(1:5952 ~ std[511f]::process::Stdio),
+                                                                            ),
+                                                                            segments: [
+                                                                                PathSegment {
+                                                                                    ident: Stdio#0,
+                                                                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).32),
+                                                                                    res: Def(
+                                                                                        Struct,
+                                                                                        DefId(1:5952 ~ std[511f]::process::Stdio),
+                                                                                    ),
+                                                                                    args: None,
+                                                                                    infer_args: true,
+                                                                                },
+                                                                            ],
+                                                                        },
+                                                                    ),
+                                                                ),
+                                                            },
+                                                            PathSegment {
+                                                                ident: piped#0,
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).34),
+                                                                res: Err,
+                                                                args: None,
+                                                                infer_args: true,
+                                                            },
+                                                        ),
+                                                    ),
+                                                    span: crates/rustc_utils/src/mir/body.rs:190:12: 190:24 (#0),
+                                                },
+                                                [],
+                                            ),
+                                            span: crates/rustc_utils/src/mir/body.rs:190:12: 190:26 (#0),
+                                        },
+                                    ],
+                                    crates/rustc_utils/src/mir/body.rs:190:6: 190:27 (#0),
+                                ),
+                                span: crates/rustc_utils/src/mir/body.rs:188:15: 190:27 (#0),
+                            },
+                            [],
+                            crates/rustc_utils/src/mir/body.rs:191:6: 191:13 (#0),
+                        ),
+                        span: crates/rustc_utils/src/mir/body.rs:188:15: 191:13 (#0),
+                    },
+                ],
+            ),
+            span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+        },
+        [
+            Arm {
+                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).51),
+                span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                pat: Pat {
+                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).50),
+                    kind: Struct(
+                        LangItem(
+                            ControlFlowBreak,
+                            crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                        ),
+                        [
+                            PatField {
+                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).49),
+                                ident: 0#793,
+                                pat: Pat {
+                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).43),
+                                    kind: Binding(
+                                        BindingMode(
+                                            No,
+                                            Not,
+                                        ),
+                                        HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).43),
+                                        residual#0,
+                                        None,
+                                    ),
+                                    span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                                    default_binding_modes: true,
+                                },
+                                is_shorthand: false,
+                                span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                            },
+                        ],
+                        false,
+                    ),
+                    span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                    default_binding_modes: true,
+                },
+                guard: None,
+                body: Expr {
+                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).48),
+                    kind: Ret(
+                        Some(
+                            Expr {
+                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).47),
+                                kind: Call(
+                                    Expr {
+                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).46),
+                                        kind: Path(
+                                            LangItem(
+                                                TryTraitFromResidual,
+                                                crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                                            ),
+                                        ),
+                                        span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                                    },
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).45),
+                                            kind: Path(
+                                                Resolved(
+                                                    None,
+                                                    Path {
+                                                        span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                                                        res: Local(
+                                                            HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).43),
+                                                        ),
+                                                        segments: [
+                                                            PathSegment {
+                                                                ident: residual#0,
+                                                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).44),
+                                                                res: Local(
+                                                                    HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).43),
+                                                                ),
+                                                                args: None,
+                                                                infer_args: true,
+                                                            },
+                                                        ],
+                                                    },
+                                                ),
+                                            ),
+                                            span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                                        },
+                                    ],
+                                ),
+                                span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                            },
+                        ),
+                    ),
+                    span: crates/rustc_utils/src/mir/body.rs:191:13: 191:14 (#793),
+                },
+            },
+            Arm {
+                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).42),
+                span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#0),
+                pat: Pat {
+                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).41),
+                    kind: Struct(
+                        LangItem(
+                            ControlFlowContinue,
+                            crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                        ),
+                        [
+                            PatField {
+                                hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).40),
+                                ident: 0#792,
+                                pat: Pat {
+                                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).37),
+                                    kind: Binding(
+                                        BindingMode(
+                                            No,
+                                            Not,
+                                        ),
+                                        HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).37),
+                                        val#0,
+                                        None,
+                                    ),
+                                    span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#0),
+                                    default_binding_modes: true,
+                                },
+                                is_shorthand: false,
+                                span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                            },
+                        ],
+                        false,
+                    ),
+                    span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#792),
+                    default_binding_modes: true,
+                },
+                guard: None,
+                body: Expr {
+                    hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).39),
+                    kind: Path(
+                        Resolved(
+                            None,
+                            Path {
+                                span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#0),
+                                res: Local(
+                                    HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).37),
+                                ),
+                                segments: [
+                                    PathSegment {
+                                        ident: val#0,
+                                        hir_id: HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).38),
+                                        res: Local(
+                                            HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).37),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                ],
+                            },
+                        ),
+                    ),
+                    span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#0),
+                },
+            },
+        ],
+        TryDesugar(
+            HirId(DefId(0:201 ~ rustc_utils[d9ce]::mir::body::run_dot).36),
+        ),
+    ),
+    span: crates/rustc_utils/src/mir/body.rs:188:15: 191:14 (#0),
+}: std::process::Child
+Expr {
+    hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).5),
+    kind: MethodCall(
+        PathSegment {
+            ident: collect#0,
+            hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).9),
+            res: Err,
+            args: Some(
+                GenericArgs {
+                    args: [
+                        Type(
+                            Ty {
+                                hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).6),
+                                span: crates/rustc_utils/src/mir/borrowck_facts.rs:28:16: 28:26 (#0),
+                                kind: Path(
+                                    Resolved(
+                                        None,
+                                        Path {
+                                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:28:16: 28:26 (#0),
+                                            res: Def(
+                                                TyAlias,
+                                                DefId(38:26 ~ rustc_hash[efd6]::FxHashSet),
+                                            ),
+                                            segments: [
+                                                PathSegment {
+                                                    ident: HashSet#0,
+                                                    hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).8),
+                                                    res: Def(
+                                                        TyAlias,
+                                                        DefId(38:26 ~ rustc_hash[efd6]::FxHashSet),
+                                                    ),
+                                                    args: Some(
+                                                        GenericArgs {
+                                                            args: [
+                                                                Infer(
+                                                                    InferArg {
+                                                                        hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).7),
+                                                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:28:24: 28:25 (#0),
+                                                                    },
+                                                                ),
+                                                            ],
+                                                            constraints: [],
+                                                            parenthesized: No,
+                                                            span_ext: crates/rustc_utils/src/mir/borrowck_facts.rs:28:23: 28:26 (#0),
+                                                        },
+                                                    ),
+                                                    infer_args: false,
+                                                },
+                                            ],
+                                        },
+                                    ),
+                                ),
+                            },
+                        ),
+                    ],
+                    constraints: [],
+                    parenthesized: No,
+                    span_ext: crates/rustc_utils/src/mir/borrowck_facts.rs:28:15: 28:27 (#0),
+                },
+            ),
+            infer_args: false,
+        },
+        Expr {
+            hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).10),
+            kind: MethodCall(
+                PathSegment {
+                    ident: filter_map#0,
+                    hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).11),
+                    res: Err,
+                    args: None,
+                    infer_args: true,
+                },
+                Expr {
+                    hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).12),
+                    kind: MethodCall(
+                        PathSegment {
+                            ident: all_returns#0,
+                            hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).13),
+                            res: Err,
+                            args: None,
+                            infer_args: true,
+                        },
+                        Expr {
+                            hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).14),
+                            kind: Path(
+                                Resolved(
+                                    None,
+                                    Path {
+                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:22:23: 22:27 (#0),
+                                        res: Local(
+                                            HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).2),
+                                        ),
+                                        segments: [
+                                            PathSegment {
+                                                ident: body#0,
+                                                hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).15),
+                                                res: Local(
+                                                    HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).2),
+                                                ),
+                                                args: None,
+                                                infer_args: true,
+                                            },
+                                        ],
+                                    },
+                                ),
+                            ),
+                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:22:23: 22:27 (#0),
+                        },
+                        [],
+                        crates/rustc_utils/src/mir/borrowck_facts.rs:23:6: 23:19 (#0),
+                    ),
+                    span: crates/rustc_utils/src/mir/borrowck_facts.rs:22:23: 23:19 (#0),
+                },
+                [
+                    Expr {
+                        hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).16),
+                        kind: Closure(
+                            Closure {
+                                def_id: DefId(0:225 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir::{closure#0}),
+                                binder: Default,
+                                constness: NotConst,
+                                capture_clause: Ref,
+                                bound_generic_params: [],
+                                fn_decl: FnDecl {
+                                    inputs: [
+                                        Ty {
+                                            hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).44),
+                                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:24:18: 24:21 (#0),
+                                            kind: Infer(
+                                                (),
+                                            ),
+                                        },
+                                    ],
+                                    output: DefaultReturn(
+                                        crates/rustc_utils/src/mir/borrowck_facts.rs:24:22: 24:22 (#0),
+                                    ),
+                                    c_variadic: false,
+                                    implicit_self: None,
+                                    lifetime_elision_allowed: false,
+                                },
+                                body: BodyId {
+                                    hir_id: HirId(DefId(0:224 ~ rustc_utils[d9ce]::mir::borrowck_facts::simplify_mir).19),
+                                },
+                                fn_decl_span: crates/rustc_utils/src/mir/borrowck_facts.rs:24:17: 24:22 (#0),
+                                fn_arg_span: Some(
+                                    crates/rustc_utils/src/mir/borrowck_facts.rs:24:17: 24:22 (#0),
+                                ),
+                                kind: Closure,
+                            },
+                        ),
+                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:24:17: 27:6 (#0),
+                    },
+                ],
+                crates/rustc_utils/src/mir/borrowck_facts.rs:24:6: 27:7 (#0),
+            ),
+            span: crates/rustc_utils/src/mir/borrowck_facts.rs:22:23: 27:7 (#0),
+        },
+        [],
+        crates/rustc_utils/src/mir/borrowck_facts.rs:28:6: 28:29 (#0),
+    ),
+    span: crates/rustc_utils/src/mir/borrowck_facts.rs:22:23: 28:29 (#0),
+}: std::collections::HashSet<rustc_middle::mir::BasicBlock, rustc_hash::FxBuildHasher>
+Expr {
+    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).7),
+    kind: AddrOf(
+        Ref,
+        Not,
+        Expr {
+            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).8),
+            kind: Call(
+                Expr {
+                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).9),
+                    kind: Path(
+                        Resolved(
+                            None,
+                            Path {
+                                span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:107:9: 107:35 (#413),
+                                res: Def(
+                                    Fn,
+                                    DefId(2:1458 ~ core[4f7d]::hint::must_use),
+                                ),
+                                segments: [
+                                    PathSegment {
+                                        ident: $crate#413,
+                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).10),
+                                        res: Def(
+                                            Mod,
+                                            DefId(3:0 ~ alloc[2c97]),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                    PathSegment {
+                                        ident: __export#413,
+                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).11),
+                                        res: Def(
+                                            Mod,
+                                            DefId(3:8430 ~ alloc[2c97]::__export),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                    PathSegment {
+                                        ident: must_use#413,
+                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).12),
+                                        res: Def(
+                                            Fn,
+                                            DefId(2:1458 ~ core[4f7d]::hint::must_use),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                ],
+                            },
+                        ),
+                    ),
+                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:107:9: 107:35 (#413),
+                },
+                [
+                    Expr {
+                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).13),
+                        kind: Block(
+                            Block {
+                                stmts: [],
+                                expr: Some(
+                                    Expr {
+                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).15),
+                                        kind: Call(
+                                            Expr {
+                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).16),
+                                                kind: Path(
+                                                    Resolved(
+                                                        None,
+                                                        Path {
+                                                            span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:13: 108:32 (#413),
+                                                            res: Def(
+                                                                Fn,
+                                                                DefId(3:5478 ~ alloc[2c97]::fmt::format),
+                                                            ),
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: $crate#413,
+                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).17),
+                                                                    res: Def(
+                                                                        Mod,
+                                                                        DefId(3:0 ~ alloc[2c97]),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                                PathSegment {
+                                                                    ident: fmt#413,
+                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).18),
+                                                                    res: Def(
+                                                                        Mod,
+                                                                        DefId(3:5441 ~ alloc[2c97]::fmt),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                                PathSegment {
+                                                                    ident: format#413,
+                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).19),
+                                                                    res: Def(
+                                                                        Fn,
+                                                                        DefId(3:5478 ~ alloc[2c97]::fmt::format),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                            ],
+                                                        },
+                                                    ),
+                                                ),
+                                                span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:13: 108:32 (#413),
+                                            },
+                                            [
+                                                Expr {
+                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).20),
+                                                    kind: Block(
+                                                        Block {
+                                                            stmts: [
+                                                                Stmt {
+                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).41),
+                                                                    kind: Let(
+                                                                        LetStmt {
+                                                                            super_: Some(
+                                                                                /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                            ),
+                                                                            pat: Pat {
+                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).39),
+                                                                                kind: Binding(
+                                                                                    BindingMode(
+                                                                                        No,
+                                                                                        Not,
+                                                                                    ),
+                                                                                    HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).39),
+                                                                                    args#804,
+                                                                                    None,
+                                                                                ),
+                                                                                span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                default_binding_modes: true,
+                                                                            },
+                                                                            ty: None,
+                                                                            init: Some(
+                                                                                Expr {
+                                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).38),
+                                                                                    kind: Array(
+                                                                                        [
+                                                                                            Expr {
+                                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).37),
+                                                                                                kind: Call(
+                                                                                                    Expr {
+                                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).36),
+                                                                                                        kind: Path(
+                                                                                                            TypeRelative(
+                                                                                                                Ty {
+                                                                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).34),
+                                                                                                                    span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:41: 76:43 (#804),
+                                                                                                                    kind: Path(
+                                                                                                                        Resolved(
+                                                                                                                            None,
+                                                                                                                            Path {
+                                                                                                                                span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:41: 76:43 (#804),
+                                                                                                                                res: Def(
+                                                                                                                                    Struct,
+                                                                                                                                    DefId(2:40549 ~ core[4f7d]::fmt::rt::Argument),
+                                                                                                                                ),
+                                                                                                                                segments: [
+                                                                                                                                    PathSegment {
+                                                                                                                                        ident: format_argument#804,
+                                                                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).33),
+                                                                                                                                        res: Def(
+                                                                                                                                            Struct,
+                                                                                                                                            DefId(2:40549 ~ core[4f7d]::fmt::rt::Argument),
+                                                                                                                                        ),
+                                                                                                                                        args: None,
+                                                                                                                                        infer_args: true,
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                    ),
+                                                                                                                },
+                                                                                                                PathSegment {
+                                                                                                                    ident: new_display#804,
+                                                                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).35),
+                                                                                                                    res: Err,
+                                                                                                                    args: None,
+                                                                                                                    infer_args: true,
+                                                                                                                },
+                                                                                                            ),
+                                                                                                        ),
+                                                                                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:41: 76:43 (#804),
+                                                                                                    },
+                                                                                                    [
+                                                                                                        Expr {
+                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).32),
+                                                                                                            kind: AddrOf(
+                                                                                                                Ref,
+                                                                                                                Not,
+                                                                                                                Expr {
+                                                                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).24),
+                                                                                                                    kind: MethodCall(
+                                                                                                                        PathSegment {
+                                                                                                                            ident: def_path_debug_str#0,
+                                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).25),
+                                                                                                                            res: Err,
+                                                                                                                            args: None,
+                                                                                                                            infer_args: true,
+                                                                                                                        },
+                                                                                                                        Expr {
+                                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).26),
+                                                                                                                            kind: Path(
+                                                                                                                                Resolved(
+                                                                                                                                    None,
+                                                                                                                                    Path {
+                                                                                                                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:5: 77:8 (#0),
+                                                                                                                                        res: Local(
+                                                                                                                                            HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).2),
+                                                                                                                                        ),
+                                                                                                                                        segments: [
+                                                                                                                                            PathSegment {
+                                                                                                                                                ident: tcx#0,
+                                                                                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).27),
+                                                                                                                                                res: Local(
+                                                                                                                                                    HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).2),
+                                                                                                                                                ),
+                                                                                                                                                args: None,
+                                                                                                                                                infer_args: true,
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ),
+                                                                                                                            ),
+                                                                                                                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:5: 77:8 (#0),
+                                                                                                                        },
+                                                                                                                        [
+                                                                                                                            Expr {
+                                                                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).28),
+                                                                                                                                kind: MethodCall(
+                                                                                                                                    PathSegment {
+                                                                                                                                        ident: to_def_id#0,
+                                                                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).29),
+                                                                                                                                        res: Err,
+                                                                                                                                        args: None,
+                                                                                                                                        infer_args: true,
+                                                                                                                                    },
+                                                                                                                                    Expr {
+                                                                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).30),
+                                                                                                                                        kind: Path(
+                                                                                                                                            Resolved(
+                                                                                                                                                None,
+                                                                                                                                                Path {
+                                                                                                                                                    span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:28: 77:34 (#0),
+                                                                                                                                                    res: Local(
+                                                                                                                                                        HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).4),
+                                                                                                                                                    ),
+                                                                                                                                                    segments: [
+                                                                                                                                                        PathSegment {
+                                                                                                                                                            ident: def_id#0,
+                                                                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).31),
+                                                                                                                                                            res: Local(
+                                                                                                                                                                HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).4),
+                                                                                                                                                            ),
+                                                                                                                                                            args: None,
+                                                                                                                                                            infer_args: true,
+                                                                                                                                                        },
+                                                                                                                                                    ],
+                                                                                                                                                },
+                                                                                                                                            ),
+                                                                                                                                        ),
+                                                                                                                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:28: 77:34 (#0),
+                                                                                                                                    },
+                                                                                                                                    [],
+                                                                                                                                    crates/rustc_utils/src/mir/borrowck_facts.rs:77:35: 77:46 (#0),
+                                                                                                                                ),
+                                                                                                                                span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:28: 77:46 (#0),
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                        crates/rustc_utils/src/mir/borrowck_facts.rs:77:9: 77:47 (#0),
+                                                                                                                    ),
+                                                                                                                    span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:5: 77:47 (#0),
+                                                                                                                },
+                                                                                                            ),
+                                                                                                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:77:5: 77:47 (#804),
+                                                                                                        },
+                                                                                                    ],
+                                                                                                ),
+                                                                                                span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:41: 76:43 (#804),
+                                                                                            },
+                                                                                        ],
+                                                                                    ),
+                                                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                },
+                                                                            ),
+                                                                            els: None,
+                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).40),
+                                                                            span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                            source: Normal,
+                                                                        },
+                                                                    ),
+                                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                },
+                                                            ],
+                                                            expr: Some(
+                                                                Expr {
+                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).49),
+                                                                    kind: Call(
+                                                                        Expr {
+                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).48),
+                                                                            kind: Path(
+                                                                                TypeRelative(
+                                                                                    Ty {
+                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).46),
+                                                                                        span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                        kind: Path(
+                                                                                            Resolved(
+                                                                                                None,
+                                                                                                Path {
+                                                                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                                    res: Def(
+                                                                                                        Struct,
+                                                                                                        DefId(2:40640 ~ core[4f7d]::fmt::Arguments),
+                                                                                                    ),
+                                                                                                    segments: [
+                                                                                                        PathSegment {
+                                                                                                            ident: format_arguments#804,
+                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).45),
+                                                                                                            res: Def(
+                                                                                                                Struct,
+                                                                                                                DefId(2:40640 ~ core[4f7d]::fmt::Arguments),
+                                                                                                            ),
+                                                                                                            args: None,
+                                                                                                            infer_args: true,
+                                                                                                        },
+                                                                                                    ],
+                                                                                                },
+                                                                                            ),
+                                                                                        ),
+                                                                                    },
+                                                                                    PathSegment {
+                                                                                        ident: new_v1#804,
+                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).47),
+                                                                                        res: Err,
+                                                                                        args: None,
+                                                                                        infer_args: true,
+                                                                                    },
+                                                                                ),
+                                                                            ),
+                                                                            span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                        },
+                                                                        [
+                                                                            Expr {
+                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).23),
+                                                                                kind: AddrOf(
+                                                                                    Ref,
+                                                                                    Not,
+                                                                                    Expr {
+                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).22),
+                                                                                        kind: Array(
+                                                                                            [
+                                                                                                Expr {
+                                                                                                    hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).21),
+                                                                                                    kind: Lit(
+                                                                                                        Spanned {
+                                                                                                            node: Str(
+                                                                                                                "get_bodies_with_borrowck_facts for ",
+                                                                                                                Cooked,
+                                                                                                            ),
+                                                                                                            span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:5: 76:44 (#0),
+                                                                                                        },
+                                                                                                    ),
+                                                                                                    span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:5: 76:44 (#0),
+                                                                                                },
+                                                                                            ],
+                                                                                        ),
+                                                                                        span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:5: 76:44 (#0),
+                                                                                    },
+                                                                                ),
+                                                                                span: crates/rustc_utils/src/mir/borrowck_facts.rs:76:5: 76:44 (#0),
+                                                                            },
+                                                                            Expr {
+                                                                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).44),
+                                                                                kind: AddrOf(
+                                                                                    Ref,
+                                                                                    Not,
+                                                                                    Expr {
+                                                                                        hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).43),
+                                                                                        kind: Path(
+                                                                                            Resolved(
+                                                                                                None,
+                                                                                                Path {
+                                                                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                                    res: Local(
+                                                                                                        HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).39),
+                                                                                                    ),
+                                                                                                    segments: [
+                                                                                                        PathSegment {
+                                                                                                            ident: args#804,
+                                                                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).42),
+                                                                                                            res: Local(
+                                                                                                                HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).39),
+                                                                                                            ),
+                                                                                                            args: None,
+                                                                                                            infer_args: true,
+                                                                                                        },
+                                                                                                    ],
+                                                                                                },
+                                                                                            ),
+                                                                                        ),
+                                                                                        span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                                    },
+                                                                                ),
+                                                                                span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                            },
+                                                                        ],
+                                                                    ),
+                                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                                },
+                                                            ),
+                                                            hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).50),
+                                                            rules: DefaultBlock,
+                                                            span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#804),
+                                                            targeted_by_break: false,
+                                                        },
+                                                        None,
+                                                    ),
+                                                    span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:33: 108:73 (#414),
+                                                },
+                                            ],
+                                        ),
+                                        span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:108:13: 108:74 (#413),
+                                    },
+                                ),
+                                hir_id: HirId(DefId(0:230 ~ rustc_utils[d9ce]::mir::borrowck_facts::mir_borrowck).14),
+                                rules: DefaultBlock,
+                                span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:107:36: 109:10 (#413),
+                                targeted_by_break: false,
+                            },
+                            None,
+                        ),
+                        span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:107:36: 109:10 (#413),
+                    },
+                ],
+            ),
+            span: /Users/eli/.rustup/toolchains/nightly-2025-08-20-aarch64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/macros.rs:107:9: 109:11 (#413),
+        },
+    ),
+    span: crates/rustc_utils/src/mir/borrowck_facts.rs:75:16: 78:4 (#0),
+}: &'{erased} std::string::String
+Expr {
+    hir_id: HirId(DefId(0:494 ~ rustc_utils[d9ce]::source_map::find_bodies::find_bodies).5),
+    kind: Lit(
+        Spanned {
+            node: Str(
+                "find_bodies",
+                Cooked,
+            ),
+            span: crates/rustc_utils/src/source_map/find_bodies.rs:48:16: 48:29 (#0),
+        },
+    ),
+    span: crates/rustc_utils/src/source_map/find_bodies.rs:48:16: 48:29 (#0),
+}: &'{erased} str
+Expr {
+    hir_id: HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).7),
+    kind: Call(
+        Expr {
+            hir_id: HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).8),
+            kind: Path(
+                Resolved(
+                    None,
+                    Path {
+                        span: crates/rustc_utils/src/source_map/find_bodies.rs:59:20: 59:31 (#0),
+                        res: Def(
+                            Fn,
+                            DefId(0:494 ~ rustc_utils[d9ce]::source_map::find_bodies::find_bodies),
+                        ),
+                        segments: [
+                            PathSegment {
+                                ident: find_bodies#0,
+                                hir_id: HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).9),
+                                res: Def(
+                                    Fn,
+                                    DefId(0:494 ~ rustc_utils[d9ce]::source_map::find_bodies::find_bodies),
+                                ),
+                                args: None,
+                                infer_args: true,
+                            },
+                        ],
+                    },
+                ),
+            ),
+            span: crates/rustc_utils/src/source_map/find_bodies.rs:59:20: 59:31 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).10),
+                kind: Path(
+                    Resolved(
+                        None,
+                        Path {
+                            span: crates/rustc_utils/src/source_map/find_bodies.rs:59:32: 59:35 (#0),
+                            res: Local(
+                                HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).2),
+                            ),
+                            segments: [
+                                PathSegment {
+                                    ident: tcx#0,
+                                    hir_id: HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).11),
+                                    res: Local(
+                                        HirId(DefId(0:495 ~ rustc_utils[d9ce]::source_map::find_bodies::find_enclosing_bodies).2),
+                                    ),
+                                    args: None,
+                                    infer_args: true,
+                                },
+                            ],
+                        },
+                    ),
+                ),
+                span: crates/rustc_utils/src/source_map/find_bodies.rs:59:32: 59:35 (#0),
+            },
+        ],
+    ),
+    span: crates/rustc_utils/src/source_map/find_bodies.rs:59:20: 59:36 (#0),
+}: std::vec::Vec<(rustc_span::Span, rustc_hir::BodyId), std::alloc::Global>
+There is an item "std" of type "extern crate"
+There is an item of type "import"
+There is an item "main" of type "function"
+Expr {
+    hir_id: HirId(DefId(0:3 ~ build_script_build[b17d]::main).3),
+    kind: Lit(
+        Spanned {
+            node: Str(
+                "[toolchain]\nchannel = \"nightly-2025-08-20\"\ncomponents = [\"clippy\", \"rust-src\", \"rustc-dev\", \"llvm-tools-preview\"]\n",
+                Cooked,
+            ),
+            span: crates/rustc_plugin/rust-toolchain.toml:1:1: 3:72 (#4),
+        },
+    ),
+    span: crates/rustc_plugin/rust-toolchain.toml:1:1: 3:72 (#4),
+}: &'{erased} str
+There is an item "std" of type "extern crate"
+There is an item of type "import"
+There is an item "rustc_driver" of type "extern crate"
+There is an item "rustc_interface" of type "extern crate"
+There is an item "rustc_session" of type "extern crate"
+There is an item "build_main" of type "import"
+There is an item "Utf8Path" of type "import"
+There is an item "cli_main" of type "import"
+There is an item "driver_main" of type "import"
+There is an item of type "import"
+There is an item "CrateFilter" of type "import"
+There is an item "RustcPlugin" of type "import"
+There is an item "RustcPluginArgs" of type "import"
+There is an item "CHANNEL" of type "constant"
+There is an item "build" of type "module"
+There is an item of type "import"
+There is an item of type "import"
+There is an item "Path" of type "import"
+There is an item "PathBuf" of type "import"
+There is an item "Command" of type "import"
+There is an item "rustc_path" of type "function"
+There is an item "target_libdir" of type "function"
+There is an item "build_main" of type "function"
+There is an item "cli" of type "module"
+There is an item of type "import"
+There is an item "env" of type "import"
+There is an item "fs" of type "import"
+There is an item "PathBuf" of type "import"
+There is an item of type "import"
+There is an item "Command" of type "import"
+There is an item "Stdio" of type "import"
+There is an item "exit" of type "import"
+There is an item "Utf8Path" of type "import"
+There is an item of type "import"
+There is an item "PLUGIN_ARGS" of type "import"
+There is an item "RustcPlugin" of type "import"
+There is an item "CrateFilter" of type "import"
+There is an item "RUN_ON_ALL_CRATES" of type "constant"
+There is an item "SPECIFIC_CRATE" of type "constant"
+There is an item "SPECIFIC_TARGET" of type "constant"
+There is an item "CARGO_VERBOSE" of type "constant"
+There is an item "cli_main" of type "function"
+There is an item "only_run_on_file" of type "function"
+There is an item "CompileKind" of type "enum"
+There is an item "driver" of type "module"
+There is an item of type "import"
+There is an item "env" of type "import"
+There is an item "Deref" of type "import"
+There is an item of type "import"
+There is an item "Path" of type "import"
+There is an item "PathBuf" of type "import"
+There is an item of type "import"
+There is an item "Command" of type "import"
+There is an item "exit" of type "import"
+There is an item of type "import"
+There is an item "EarlyDiagCtxt" of type "import"
+There is an item "ErrorOutputType" of type "import"
+There is an item "VersionInfo" of type "import"
+There is an item of type "import"
+There is an item "PLUGIN_ARGS" of type "import"
+There is an item "RustcPlugin" of type "import"
+There is an item of type "import"
+There is an item "RUN_ON_ALL_CRATES" of type "import"
+There is an item "SPECIFIC_CRATE" of type "import"
+There is an item "SPECIFIC_TARGET" of type "import"
+There is an item "arg_value" of type "function"
+There is an item "toolchain_path" of type "function"
+There is an item "get_sysroot" of type "function"
+There is an item "DefaultCallbacks" of type "struct"
+There is an item of type "implementation"
+There is an item "driver_main" of type "function"
+There is an item "is_target_crate" of type "function"
+There is an item "plugin" of type "module"
+There is an item of type "import"
+There is an item "Cow" of type "import"
+There is an item "PathBuf" of type "import"
+There is an item "Command" of type "import"
+There is an item "Utf8Path" of type "import"
+There is an item of type "import"
+There is an item "Serialize" of type "import"
+There is an item "DeserializeOwned" of type "import"
+There is an item "CrateFilter" of type "enum"
+There is an item "RustcPluginArgs" of type "struct"
+There is an item "RustcPlugin" of type "trait"
+There is an item "PLUGIN_ARGS" of type "constant"
+Expr {
+    hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).3),
+    kind: MethodCall(
+        PathSegment {
+            ident: expect#0,
+            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).4),
+            res: Err,
+            args: None,
+            infer_args: true,
+        },
+        Expr {
+            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).5),
+            kind: MethodCall(
+                PathSegment {
+                    ident: output#0,
+                    hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).6),
+                    res: Err,
+                    args: None,
+                    infer_args: true,
+                },
+                Expr {
+                    hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).7),
+                    kind: MethodCall(
+                        PathSegment {
+                            ident: args#0,
+                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).8),
+                            res: Err,
+                            args: None,
+                            infer_args: true,
+                        },
+                        Expr {
+                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).9),
+                            kind: Call(
+                                Expr {
+                                    hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).10),
+                                    kind: Path(
+                                        TypeRelative(
+                                            Ty {
+                                                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).12),
+                                                span: crates/rustc_plugin/src/build.rs:7:16: 7:23 (#0),
+                                                kind: Path(
+                                                    Resolved(
+                                                        None,
+                                                        Path {
+                                                            span: crates/rustc_plugin/src/build.rs:7:16: 7:23 (#0),
+                                                            res: Def(
+                                                                Struct,
+                                                                DefId(1:5881 ~ std[511f]::process::Command),
+                                                            ),
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: Command#0,
+                                                                    hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).11),
+                                                                    res: Def(
+                                                                        Struct,
+                                                                        DefId(1:5881 ~ std[511f]::process::Command),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                            ],
+                                                        },
+                                                    ),
+                                                ),
+                                            },
+                                            PathSegment {
+                                                ident: new#0,
+                                                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).13),
+                                                res: Err,
+                                                args: None,
+                                                infer_args: true,
+                                            },
+                                        ),
+                                    ),
+                                    span: crates/rustc_plugin/src/build.rs:7:16: 7:28 (#0),
+                                },
+                                [
+                                    Expr {
+                                        hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).14),
+                                        kind: Lit(
+                                            Spanned {
+                                                node: Str(
+                                                    "rustup",
+                                                    Cooked,
+                                                ),
+                                                span: crates/rustc_plugin/src/build.rs:7:29: 7:37 (#0),
+                                            },
+                                        ),
+                                        span: crates/rustc_plugin/src/build.rs:7:29: 7:37 (#0),
+                                    },
+                                ],
+                            ),
+                            span: crates/rustc_plugin/src/build.rs:7:16: 7:38 (#0),
+                        },
+                        [
+                            Expr {
+                                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).15),
+                                kind: Array(
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).16),
+                                            kind: Lit(
+                                                Spanned {
+                                                    node: Str(
+                                                        "which",
+                                                        Cooked,
+                                                    ),
+                                                    span: crates/rustc_plugin/src/build.rs:8:12: 8:19 (#0),
+                                                },
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:8:12: 8:19 (#0),
+                                        },
+                                        Expr {
+                                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).17),
+                                            kind: Lit(
+                                                Spanned {
+                                                    node: Str(
+                                                        "--toolchain",
+                                                        Cooked,
+                                                    ),
+                                                    span: crates/rustc_plugin/src/build.rs:8:21: 8:34 (#0),
+                                                },
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:8:21: 8:34 (#0),
+                                        },
+                                        Expr {
+                                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).18),
+                                            kind: Path(
+                                                Resolved(
+                                                    None,
+                                                    Path {
+                                                        span: crates/rustc_plugin/src/build.rs:8:36: 8:50 (#0),
+                                                        res: Def(
+                                                            Const,
+                                                            DefId(0:14 ~ rustc_plugin[abeb]::CHANNEL),
+                                                        ),
+                                                        segments: [
+                                                            PathSegment {
+                                                                ident: crate#0,
+                                                                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).19),
+                                                                res: Def(
+                                                                    Mod,
+                                                                    DefId(0:0 ~ rustc_plugin[abeb]),
+                                                                ),
+                                                                args: None,
+                                                                infer_args: true,
+                                                            },
+                                                            PathSegment {
+                                                                ident: CHANNEL#0,
+                                                                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).20),
+                                                                res: Def(
+                                                                    Const,
+                                                                    DefId(0:14 ~ rustc_plugin[abeb]::CHANNEL),
+                                                                ),
+                                                                args: None,
+                                                                infer_args: true,
+                                                            },
+                                                        ],
+                                                    },
+                                                ),
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:8:36: 8:50 (#0),
+                                        },
+                                        Expr {
+                                            hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).21),
+                                            kind: Lit(
+                                                Spanned {
+                                                    node: Str(
+                                                        "rustc",
+                                                        Cooked,
+                                                    ),
+                                                    span: crates/rustc_plugin/src/build.rs:8:52: 8:59 (#0),
+                                                },
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:8:52: 8:59 (#0),
+                                        },
+                                    ],
+                                ),
+                                span: crates/rustc_plugin/src/build.rs:8:11: 8:60 (#0),
+                            },
+                        ],
+                        crates/rustc_plugin/src/build.rs:8:6: 8:61 (#0),
+                    ),
+                    span: crates/rustc_plugin/src/build.rs:7:16: 8:61 (#0),
+                },
+                [],
+                crates/rustc_plugin/src/build.rs:9:6: 9:14 (#0),
+            ),
+            span: crates/rustc_plugin/src/build.rs:7:16: 9:14 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path).22),
+                kind: Lit(
+                    Spanned {
+                        node: Str(
+                            "failed to run rustup which",
+                            Cooked,
+                        ),
+                        span: crates/rustc_plugin/src/build.rs:10:13: 10:41 (#0),
+                    },
+                ),
+                span: crates/rustc_plugin/src/build.rs:10:13: 10:41 (#0),
+            },
+        ],
+        crates/rustc_plugin/src/build.rs:10:6: 10:42 (#0),
+    ),
+    span: crates/rustc_plugin/src/build.rs:7:16: 10:42 (#0),
+}: std::process::Output
+Expr {
+    hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).5),
+    kind: MethodCall(
+        PathSegment {
+            ident: expect#0,
+            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).6),
+            res: Err,
+            args: None,
+            infer_args: true,
+        },
+        Expr {
+            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).7),
+            kind: MethodCall(
+                PathSegment {
+                    ident: output#0,
+                    hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).8),
+                    res: Err,
+                    args: None,
+                    infer_args: true,
+                },
+                Expr {
+                    hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).9),
+                    kind: MethodCall(
+                        PathSegment {
+                            ident: args#0,
+                            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).10),
+                            res: Err,
+                            args: None,
+                            infer_args: true,
+                        },
+                        Expr {
+                            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).11),
+                            kind: Call(
+                                Expr {
+                                    hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).12),
+                                    kind: Path(
+                                        TypeRelative(
+                                            Ty {
+                                                hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).14),
+                                                span: crates/rustc_plugin/src/build.rs:16:16: 16:23 (#0),
+                                                kind: Path(
+                                                    Resolved(
+                                                        None,
+                                                        Path {
+                                                            span: crates/rustc_plugin/src/build.rs:16:16: 16:23 (#0),
+                                                            res: Def(
+                                                                Struct,
+                                                                DefId(1:5881 ~ std[511f]::process::Command),
+                                                            ),
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: Command#0,
+                                                                    hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).13),
+                                                                    res: Def(
+                                                                        Struct,
+                                                                        DefId(1:5881 ~ std[511f]::process::Command),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                            ],
+                                                        },
+                                                    ),
+                                                ),
+                                            },
+                                            PathSegment {
+                                                ident: new#0,
+                                                hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).15),
+                                                res: Err,
+                                                args: None,
+                                                infer_args: true,
+                                            },
+                                        ),
+                                    ),
+                                    span: crates/rustc_plugin/src/build.rs:16:16: 16:28 (#0),
+                                },
+                                [
+                                    Expr {
+                                        hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).16),
+                                        kind: Path(
+                                            Resolved(
+                                                None,
+                                                Path {
+                                                    span: crates/rustc_plugin/src/build.rs:16:29: 16:34 (#0),
+                                                    res: Local(
+                                                        HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).2),
+                                                    ),
+                                                    segments: [
+                                                        PathSegment {
+                                                            ident: rustc#0,
+                                                            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).17),
+                                                            res: Local(
+                                                                HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).2),
+                                                            ),
+                                                            args: None,
+                                                            infer_args: true,
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                        ),
+                                        span: crates/rustc_plugin/src/build.rs:16:29: 16:34 (#0),
+                                    },
+                                ],
+                            ),
+                            span: crates/rustc_plugin/src/build.rs:16:16: 16:35 (#0),
+                        },
+                        [
+                            Expr {
+                                hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).18),
+                                kind: Array(
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).19),
+                                            kind: Lit(
+                                                Spanned {
+                                                    node: Str(
+                                                        "--print",
+                                                        Cooked,
+                                                    ),
+                                                    span: crates/rustc_plugin/src/build.rs:17:12: 17:21 (#0),
+                                                },
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:17:12: 17:21 (#0),
+                                        },
+                                        Expr {
+                                            hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).20),
+                                            kind: Lit(
+                                                Spanned {
+                                                    node: Str(
+                                                        "target-libdir",
+                                                        Cooked,
+                                                    ),
+                                                    span: crates/rustc_plugin/src/build.rs:17:23: 17:38 (#0),
+                                                },
+                                            ),
+                                            span: crates/rustc_plugin/src/build.rs:17:23: 17:38 (#0),
+                                        },
+                                    ],
+                                ),
+                                span: crates/rustc_plugin/src/build.rs:17:11: 17:39 (#0),
+                            },
+                        ],
+                        crates/rustc_plugin/src/build.rs:17:6: 17:40 (#0),
+                    ),
+                    span: crates/rustc_plugin/src/build.rs:16:16: 17:40 (#0),
+                },
+                [],
+                crates/rustc_plugin/src/build.rs:18:6: 18:14 (#0),
+            ),
+            span: crates/rustc_plugin/src/build.rs:16:16: 18:14 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:22 ~ rustc_plugin[abeb]::build::target_libdir).21),
+                kind: Lit(
+                    Spanned {
+                        node: Str(
+                            "failed to run rustc --print target-libdir",
+                            Cooked,
+                        ),
+                        span: crates/rustc_plugin/src/build.rs:19:13: 19:56 (#0),
+                    },
+                ),
+                span: crates/rustc_plugin/src/build.rs:19:13: 19:56 (#0),
+            },
+        ],
+        crates/rustc_plugin/src/build.rs:19:6: 19:57 (#0),
+    ),
+    span: crates/rustc_plugin/src/build.rs:16:16: 19:57 (#0),
+}: std::process::Output
+Expr {
+    hir_id: HirId(DefId(0:23 ~ rustc_plugin[abeb]::build::build_main).3),
+    kind: Call(
+        Expr {
+            hir_id: HirId(DefId(0:23 ~ rustc_plugin[abeb]::build::build_main).4),
+            kind: Path(
+                Resolved(
+                    None,
+                    Path {
+                        span: crates/rustc_plugin/src/build.rs:25:20: 25:30 (#0),
+                        res: Def(
+                            Fn,
+                            DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path),
+                        ),
+                        segments: [
+                            PathSegment {
+                                ident: rustc_path#0,
+                                hir_id: HirId(DefId(0:23 ~ rustc_plugin[abeb]::build::build_main).5),
+                                res: Def(
+                                    Fn,
+                                    DefId(0:21 ~ rustc_plugin[abeb]::build::rustc_path),
+                                ),
+                                args: None,
+                                infer_args: true,
+                            },
+                        ],
+                    },
+                ),
+            ),
+            span: crates/rustc_plugin/src/build.rs:25:20: 25:30 (#0),
+        },
+        [],
+    ),
+    span: crates/rustc_plugin/src/build.rs:25:20: 25:32 (#0),
+}: std::path::PathBuf
+Expr {
+    hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).11),
+    kind: MethodCall(
+        PathSegment {
+            ident: unwrap#0,
+            hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).12),
+            res: Err,
+            args: None,
+            infer_args: true,
+        },
+        Expr {
+            hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).13),
+            kind: MethodCall(
+                PathSegment {
+                    ident: canonicalize#0,
+                    hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).14),
+                    res: Err,
+                    args: None,
+                    infer_args: true,
+                },
+                Expr {
+                    hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).15),
+                    kind: Path(
+                        Resolved(
+                            None,
+                            Path {
+                                span: crates/rustc_plugin/src/cli.rs:109:19: 109:28 (#0),
+                                res: Local(
+                                    HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).4),
+                                ),
+                                segments: [
+                                    PathSegment {
+                                        ident: file_path#0,
+                                        hir_id: HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).16),
+                                        res: Local(
+                                            HirId(DefId(0:48 ~ rustc_plugin[abeb]::cli::only_run_on_file).4),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                ],
+                            },
+                        ),
+                    ),
+                    span: crates/rustc_plugin/src/cli.rs:109:19: 109:28 (#0),
+                },
+                [],
+                crates/rustc_plugin/src/cli.rs:109:29: 109:43 (#0),
+            ),
+            span: crates/rustc_plugin/src/cli.rs:109:19: 109:43 (#0),
+        },
+        [],
+        crates/rustc_plugin/src/cli.rs:109:44: 109:52 (#0),
+    ),
+    span: crates/rustc_plugin/src/cli.rs:109:19: 109:52 (#0),
+}: std::path::PathBuf
+Expr {
+    hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).9),
+    kind: MethodCall(
+        PathSegment {
+            ident: map#0,
+            hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).10),
+            res: Err,
+            args: None,
+            infer_args: true,
+        },
+        Expr {
+            hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).11),
+            kind: MethodCall(
+                PathSegment {
+                    ident: iter#0,
+                    hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).12),
+                    res: Err,
+                    args: None,
+                    infer_args: true,
+                },
+                Expr {
+                    hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).13),
+                    kind: Path(
+                        Resolved(
+                            None,
+                            Path {
+                                span: crates/rustc_plugin/src/driver.rs:21:18: 21:22 (#0),
+                                res: Local(
+                                    HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).2),
+                                ),
+                                segments: [
+                                    PathSegment {
+                                        ident: args#0,
+                                        hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).14),
+                                        res: Local(
+                                            HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).2),
+                                        ),
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                ],
+                            },
+                        ),
+                    ),
+                    span: crates/rustc_plugin/src/driver.rs:21:18: 21:22 (#0),
+                },
+                [],
+                crates/rustc_plugin/src/driver.rs:21:23: 21:29 (#0),
+            ),
+            span: crates/rustc_plugin/src/driver.rs:21:18: 21:29 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).15),
+                kind: Path(
+                    Resolved(
+                        None,
+                        Path {
+                            span: crates/rustc_plugin/src/driver.rs:21:34: 21:46 (#0),
+                            res: Def(
+                                AssocFn,
+                                DefId(2:3942 ~ core[4f7d]::ops::deref::Deref::deref),
+                            ),
+                            segments: [
+                                PathSegment {
+                                    ident: Deref#0,
+                                    hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).16),
+                                    res: Def(
+                                        Trait,
+                                        DefId(2:3940 ~ core[4f7d]::ops::deref::Deref),
+                                    ),
+                                    args: None,
+                                    infer_args: true,
+                                },
+                                PathSegment {
+                                    ident: deref#0,
+                                    hir_id: HirId(DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value).17),
+                                    res: Def(
+                                        AssocFn,
+                                        DefId(2:3942 ~ core[4f7d]::ops::deref::Deref::deref),
+                                    ),
+                                    args: None,
+                                    infer_args: true,
+                                },
+                            ],
+                        },
+                    ),
+                ),
+                span: crates/rustc_plugin/src/driver.rs:21:34: 21:46 (#0),
+            },
+        ],
+        crates/rustc_plugin/src/driver.rs:21:30: 21:47 (#0),
+    ),
+    span: crates/rustc_plugin/src/driver.rs:21:18: 21:47 (#0),
+}: std::iter::Map<std::slice::Iter<'{erased}, T/#0>, FnDef(DefId(2:3942 ~ core[4f7d]::ops::deref::Deref::deref), [T/#0])>
+Expr {
+    hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).5),
+    kind: Call(
+        Expr {
+            hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).6),
+            kind: Path(
+                Resolved(
+                    None,
+                    Path {
+                        span: crates/rustc_plugin/src/driver.rs:57:22: 57:31 (#0),
+                        res: Def(
+                            Fn,
+                            DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value),
+                        ),
+                        segments: [
+                            PathSegment {
+                                ident: arg_value#0,
+                                hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).7),
+                                res: Def(
+                                    Fn,
+                                    DefId(0:90 ~ rustc_plugin[abeb]::driver::arg_value),
+                                ),
+                                args: None,
+                                infer_args: true,
+                            },
+                        ],
+                    },
+                ),
+            ),
+            span: crates/rustc_plugin/src/driver.rs:57:22: 57:31 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).8),
+                kind: Path(
+                    Resolved(
+                        None,
+                        Path {
+                            span: crates/rustc_plugin/src/driver.rs:57:32: 57:41 (#0),
+                            res: Local(
+                                HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).2),
+                            ),
+                            segments: [
+                                PathSegment {
+                                    ident: orig_args#0,
+                                    hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).9),
+                                    res: Local(
+                                        HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).2),
+                                    ),
+                                    args: None,
+                                    infer_args: true,
+                                },
+                            ],
+                        },
+                    ),
+                ),
+                span: crates/rustc_plugin/src/driver.rs:57:32: 57:41 (#0),
+            },
+            Expr {
+                hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).10),
+                kind: Lit(
+                    Spanned {
+                        node: Str(
+                            "--sysroot",
+                            Cooked,
+                        ),
+                        span: crates/rustc_plugin/src/driver.rs:57:43: 57:54 (#0),
+                    },
+                ),
+                span: crates/rustc_plugin/src/driver.rs:57:43: 57:54 (#0),
+            },
+            Expr {
+                hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).11),
+                kind: Closure(
+                    Closure {
+                        def_id: DefId(0:99 ~ rustc_plugin[abeb]::driver::get_sysroot::{closure#0}),
+                        binder: Default,
+                        constness: NotConst,
+                        capture_clause: Ref,
+                        bound_generic_params: [],
+                        fn_decl: FnDecl {
+                            inputs: [
+                                Ty {
+                                    hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).15),
+                                    span: crates/rustc_plugin/src/driver.rs:57:57: 57:58 (#0),
+                                    kind: Infer(
+                                        (),
+                                    ),
+                                },
+                            ],
+                            output: DefaultReturn(
+                                crates/rustc_plugin/src/driver.rs:57:59: 57:59 (#0),
+                            ),
+                            c_variadic: false,
+                            implicit_self: None,
+                            lifetime_elision_allowed: false,
+                        },
+                        body: BodyId {
+                            hir_id: HirId(DefId(0:98 ~ rustc_plugin[abeb]::driver::get_sysroot).14),
+                        },
+                        fn_decl_span: crates/rustc_plugin/src/driver.rs:57:56: 57:59 (#0),
+                        fn_arg_span: Some(
+                            crates/rustc_plugin/src/driver.rs:57:56: 57:59 (#0),
+                        ),
+                        kind: Closure,
+                    },
+                ),
+                span: crates/rustc_plugin/src/driver.rs:57:56: 57:64 (#0),
+            },
+        ],
+    ),
+    span: crates/rustc_plugin/src/driver.rs:57:22: 57:65 (#0),
+}: std::option::Option<&'{erased} str>
+Expr {
+    hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).5),
+    kind: Call(
+        Expr {
+            hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).6),
+            kind: Path(
+                TypeRelative(
+                    Ty {
+                        hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).8),
+                        span: crates/rustc_plugin/src/driver.rs:103:19: 103:32 (#0),
+                        kind: Path(
+                            Resolved(
+                                None,
+                                Path {
+                                    span: crates/rustc_plugin/src/driver.rs:103:19: 103:32 (#0),
+                                    res: Def(
+                                        Struct,
+                                        DefId(166:1392 ~ rustc_session[afd1]::session::EarlyDiagCtxt),
+                                    ),
+                                    segments: [
+                                        PathSegment {
+                                            ident: EarlyDiagCtxt#0,
+                                            hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).7),
+                                            res: Def(
+                                                Struct,
+                                                DefId(166:1392 ~ rustc_session[afd1]::session::EarlyDiagCtxt),
+                                            ),
+                                            args: None,
+                                            infer_args: true,
+                                        },
+                                    ],
+                                },
+                            ),
+                        ),
+                    },
+                    PathSegment {
+                        ident: new#0,
+                        hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).9),
+                        res: Err,
+                        args: None,
+                        infer_args: true,
+                    },
+                ),
+            ),
+            span: crates/rustc_plugin/src/driver.rs:103:19: 103:37 (#0),
+        },
+        [
+            Expr {
+                hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).10),
+                kind: Call(
+                    Expr {
+                        hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).11),
+                        kind: Path(
+                            TypeRelative(
+                                Ty {
+                                    hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).13),
+                                    span: crates/rustc_plugin/src/driver.rs:103:38: 103:53 (#0),
+                                    kind: Path(
+                                        Resolved(
+                                            None,
+                                            Path {
+                                                span: crates/rustc_plugin/src/driver.rs:103:38: 103:53 (#0),
+                                                res: Def(
+                                                    Enum,
+                                                    DefId(166:2710 ~ rustc_session[afd1]::config::ErrorOutputType),
+                                                ),
+                                                segments: [
+                                                    PathSegment {
+                                                        ident: ErrorOutputType#0,
+                                                        hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).12),
+                                                        res: Def(
+                                                            Enum,
+                                                            DefId(166:2710 ~ rustc_session[afd1]::config::ErrorOutputType),
+                                                        ),
+                                                        args: None,
+                                                        infer_args: true,
+                                                    },
+                                                ],
+                                            },
+                                        ),
+                                    ),
+                                },
+                                PathSegment {
+                                    ident: default#0,
+                                    hir_id: HirId(DefId(0:114 ~ rustc_plugin[abeb]::driver::driver_main).14),
+                                    res: Err,
+                                    args: None,
+                                    infer_args: true,
+                                },
+                            ),
+                        ),
+                        span: crates/rustc_plugin/src/driver.rs:103:38: 103:62 (#0),
+                    },
+                    [],
+                ),
+                span: crates/rustc_plugin/src/driver.rs:103:38: 103:64 (#0),
+            },
+        ],
+    ),
+    span: crates/rustc_plugin/src/driver.rs:103:19: 103:65 (#0),
+}: rustc_session::EarlyDiagCtxt
