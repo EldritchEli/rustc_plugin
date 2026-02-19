@@ -87,7 +87,7 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
         }
         CrateFilter::OnlyWorkspace => {}
         CrateFilter::CrateContainingFile(_) => unreachable!(),
-        CrateFilter::RunOnCrates(items) => unreachable!(),
+        CrateFilter::RunOnCrates(_) => unreachable!(),
       }
     }
     CrateFilter::RunOnCrates(items) => {

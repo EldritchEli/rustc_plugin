@@ -107,11 +107,15 @@ pub fn driver_main<T: RustcPlugin>(plugin: T) {
   rustc_driver::init_rustc_env_logger(&early_dcx);
   exit(rustc_driver::catch_with_exit_code(move || {
     let mut orig_args: Vec<String> = env::args().collect();
-    let crate_name = orig_args.get(3).cloned().unwrap_or(format!(
-      "no named found for driver invocation. Where origianl arguments passed are: {:?}",
-      &orig_args
-    ));
-    log::debug!("entered driver for crate named {:?}", crate_name);
+    let crate_name = arg_value(&orig_args, "--crate-name", |_| true)
+      .unwrap_or_else(|| {
+        log::error!(
+          "no crate name found. where the original arguments passes where: {:?}",
+          &orig_args
+        );
+        "NO_CRATE_NAME_FOUND"
+      })
+      .to_string();
     let (have_sys_root_arg, sys_root) = get_sysroot(&orig_args);
 
     if orig_args.iter().any(|a| a == "--version" || a == "-V") {
@@ -153,8 +157,8 @@ pub fn driver_main<T: RustcPlugin>(plugin: T) {
     let run_on_all_crates = env::var(RUN_ON_ALL_CRATES).is_ok();
     let normal_rustc = arg_value(&args, "--print", |_| true).is_some();
     let is_target_crate = is_target_crate(&args);
-    let run_plugin = specified_crate.is_some();
-    //normal_rustc && (run_on_all_crates || primary_package || specified_crate.is_some()) /*&& is_target_crate*/;
+    let run_plugin = 
+    !normal_rustc && (run_on_all_crates || primary_package || specified_crate.is_some()) /*&& is_target_crate*/;
 
     if run_plugin {
       log::debug!(
@@ -187,6 +191,6 @@ fn is_target_crate(args: &[String]) -> bool {
         && (arg_value(args, "--crate-type", |_| true).is_none()  // integration test crate
           || arg_value(args, "--crate-type", |name| name == target).is_some())
     }
-    _ => true,
+    _ => false,
   }
 }
