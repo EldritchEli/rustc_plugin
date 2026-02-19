@@ -13,6 +13,7 @@ pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
 pub const SPECIFIC_CRATE: &str = "SPECIFIC_CRATE";
 pub const SPECIFIC_TARGET: &str = "SPECIFIC_TARGET";
 pub const CARGO_VERBOSE: &str = "CARGO_VERBOSE";
+pub const MANY_SPECIFIC_CRATES: &str = "MANY_SPECIFIC_CRATES";
 
 /// The top-level function that should be called in your user-facing binary.
 pub fn cli_main<T: RustcPlugin>(plugin: T) {
@@ -43,8 +44,10 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
   if cfg!(windows) {
     path.set_extension("exe");
   }
+  // should we use rustc_wrapper or rustc_workspace_wrapper?
+  let rustc_wrapper = args.wrapper_type.as_env_var();
 
-  cmd.env("RUSTC_WORKSPACE_WRAPPER", path);
+  cmd.env(&rustc_wrapper, path);
   if default_build {
     eprintln!("error: failed to find cargo build command. defaulting to check");
     cmd.arg("check");
@@ -84,7 +87,13 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
         }
         CrateFilter::OnlyWorkspace => {}
         CrateFilter::CrateContainingFile(_) => unreachable!(),
+        CrateFilter::RunOnCrates(items) => unreachable!(),
       }
+    }
+    CrateFilter::RunOnCrates(items) => {
+      let stringified =
+        serde_json::to_string(&items).expect("failed to parse vec of string to string");
+      cmd.env(MANY_SPECIFIC_CRATES, stringified);
     }
   }
 

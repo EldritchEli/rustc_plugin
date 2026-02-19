@@ -14,7 +14,7 @@ pub use build::build_main;
 pub use cargo_metadata::camino::Utf8Path;
 pub use cli::cli_main;
 pub use driver::driver_main;
-pub use plugin::{CrateFilter, RustcPlugin, RustcPluginArgs};
+pub use plugin::{CrateFilter, RustcPlugin, RustcPluginArgs, RustcWrapperType};
 
 /// The toolchain channel that this version of rustc_plugin was built with.
 ///

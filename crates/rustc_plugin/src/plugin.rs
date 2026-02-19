@@ -3,6 +3,19 @@ use std::{borrow::Cow, path::PathBuf, process::Command};
 use cargo_metadata::camino::Utf8Path;
 use serde::{Serialize, de::DeserializeOwned};
 
+pub enum RustcWrapperType {
+  RustcWrapper,
+  RustcWorkspaceWrapper,
+}
+impl RustcWrapperType {
+  pub fn as_env_var(&self) -> String {
+    match self {
+      RustcWrapperType::RustcWrapper => "RUSTC_WRAPPER".into(),
+      RustcWrapperType::RustcWorkspaceWrapper => "RUSTC_WORKSPACE_WRAPPER".into(),
+    }
+  }
+}
+
 /// Specification of a set of crates.
 pub enum CrateFilter {
   /// Every crate in the workspace and all transitive dependencies.
@@ -13,16 +26,20 @@ pub enum CrateFilter {
 
   /// Only the crate containing a specific file.
   CrateContainingFile(PathBuf),
+
+  RunOnCrates(Vec<String>),
 }
 
 /// Arguments from your plugin to the rustc_plugin framework.
 pub struct RustcPluginArgs<Args> {
   /// Whatever CLI arguments you want to pass along.
   pub args: Args,
-
+  /// Should we run or driver as a RUSTC_WRAPPER or a RUSTC_WORKSPACE_WRAPPER?
+  pub wrapper_type: RustcWrapperType,
   /// Which crates you want to run the plugin on.
   pub filter: CrateFilter,
 }
+
 pub trait RustcPlugin: Sized {
   /// Command-line arguments passed by the user.
   type Args: Serialize + DeserializeOwned;
@@ -32,7 +49,6 @@ pub trait RustcPlugin: Sized {
   ///
   /// ```ignore
   /// env!("CARGO_PKG_VERSION").into()
-  /// ```
   fn version(&self) -> Cow<'static, str>;
 
   /// Returns the name of your driver binary as it's installed in the filesystem.
