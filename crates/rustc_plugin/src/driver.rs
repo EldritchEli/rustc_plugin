@@ -170,7 +170,7 @@ pub fn driver_main<T: RustcPlugin>(plugin: T) {
       );
       let plugin_args: T::Args =
         serde_json::from_str(&env::var(PLUGIN_ARGS).unwrap()).unwrap();
-      plugin.run(args, plugin_args).unwrap();
+      T::run(args, plugin_args).unwrap();
     } else {
       log::debug!(
         "Running normal Rust for crate {crate_name}. Relevant variables: \

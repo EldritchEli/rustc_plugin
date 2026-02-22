@@ -49,6 +49,9 @@ pub trait RustcPlugin: Sized {
   ///
   /// ```ignore
   /// env!("CARGO_PKG_VERSION").into()
+  ///
+  ///
+  ///
   fn version(&self) -> Cow<'static, str>;
 
   /// Returns the name of your driver binary as it's installed in the filesystem.
@@ -58,14 +61,12 @@ pub trait RustcPlugin: Sized {
 
   /// Parses and returns the CLI arguments for the plugin.
   fn args(&self, target_dir: &Utf8Path) -> RustcPluginArgs<Self::Args>;
-
   /// Optionally modify the `cargo` command that launches rustc.
   /// For example, you could pass a `--feature` flag here.
   fn modify_cargo(&self, _cargo: &mut Command, _args: &Self::Args) {}
 
   /// Executes the plugin with a set of compiler and plugin args.
   fn run(
-    self,
     compiler_args: Vec<String>,
     plugin_args: Self::Args,
   ) -> rustc_interface::interface::Result<()>;
