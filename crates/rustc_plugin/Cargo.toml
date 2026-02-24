@@ -22,4 +22,6 @@ colored-print = "0.1.2"
 anyhow = { version = "1", features = ["backtrace"] }
 
 [build-dependencies]
+log = "0.4"
 toml = "0.7"
+
