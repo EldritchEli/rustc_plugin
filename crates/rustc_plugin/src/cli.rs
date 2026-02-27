@@ -1,13 +1,15 @@
 use std::{
   env, fs,
   path::PathBuf,
-  process::{Command, Stdio, exit},
+  process::{Command, Stdio},
 };
 
 use cargo_metadata::camino::Utf8Path;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
-use crate::{CrateFilter, build_commands::CargoBuildCommand};
+use crate::{
+  CrateFilter, PluginResult, RustcPluginError, build_commands::CargoBuildCommand,
+};
 
 pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
 pub const SPECIFIC_CRATE: &str = "SPECIFIC_CRATE";
@@ -16,10 +18,10 @@ pub const CARGO_VERBOSE: &str = "CARGO_VERBOSE";
 pub const MANY_SPECIFIC_CRATES: &str = "MANY_SPECIFIC_CRATES";
 
 /// The top-level function that should be called in your user-facing binary.
-pub fn cli_main<T: RustcPlugin>(plugin: T) {
+pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> {
   if env::args().any(|arg| arg == "-V") {
     println!("{}", plugin.version());
-    return;
+    return Ok(None);
   }
   let default_build = !env::args().any(|arg| arg.parse::<CargoBuildCommand>().is_ok());
 
@@ -49,8 +51,17 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
 
   cmd.env(&rustc_wrapper, path);
   if default_build {
-    eprintln!("error: failed to find cargo build command. defaulting to check");
-    cmd.arg("check");
+    match args.default_build_command {
+      Some(bcmd) => {
+        cmd.arg(String::from(bcmd));
+        plugin.modify_cargo(&mut cmd, &args.args);
+      }
+      None => {
+        eprintln!("error: failed to find cargo build command. defaulting to check");
+        plugin.modify_cargo(&mut cmd, &args.args);
+        cmd.arg("check");
+      }
+    }
   } else {
     plugin.modify_cargo(&mut cmd, &args.args);
   }
@@ -106,11 +117,19 @@ pub fn cli_main<T: RustcPlugin>(plugin: T) {
   if workspace_members.iter().any(|pkg| pkg.name == "rustc-main") {
     cmd.env("CFG_RELEASE", "");
   }
-
-  println!("final command: {:?}", cmd);
+  log::debug!("final command: {:?}", cmd);
+  plugin.before_execution();
   let exit_status = cmd.status().expect("failed to wait for cargo?");
-
-  exit(exit_status.code().unwrap_or(-1));
+  if exit_status.success() {
+    match plugin.after_execution() {
+      Ok(res) => Ok(Some(res)),
+      Err(e) => Err(e),
+    }
+  } else {
+    Err(RustcPluginError::ExitCode(
+      exit_status.code().expect("expected an exit code"),
+    ))
+  }
 }
 
 fn only_run_on_file(

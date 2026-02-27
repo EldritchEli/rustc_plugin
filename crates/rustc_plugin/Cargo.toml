@@ -17,6 +17,7 @@ cargo_metadata = "0.14"
 serde = "1"
 serde_json = "1"
 colored-print = "0.1.2"
+thiserror = "2.0.18"
 
 [dev-dependencies]
 anyhow = { version = "1", features = ["backtrace"] }

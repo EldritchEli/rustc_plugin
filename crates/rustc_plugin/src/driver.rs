@@ -101,7 +101,7 @@ struct DefaultCallbacks;
 impl rustc_driver::Callbacks for DefaultCallbacks {}
 
 /// The top-level function that should be called by your internal driver binary.
-pub fn driver_main<T: RustcPlugin>(plugin: T) {
+pub fn driver_main<Q,T: RustcPlugin<Q>>() {
   //println!("runnin main driver");
   let early_dcx = EarlyDiagCtxt::new(ErrorOutputType::default());
   rustc_driver::init_rustc_env_logger(&early_dcx);

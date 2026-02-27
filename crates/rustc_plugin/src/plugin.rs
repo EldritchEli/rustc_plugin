@@ -3,6 +3,8 @@ use std::{borrow::Cow, path::PathBuf, process::Command};
 use cargo_metadata::camino::Utf8Path;
 use serde::{Serialize, de::DeserializeOwned};
 
+use crate::{PluginResult, build_commands::CargoBuildCommand, driver};
+
 pub enum RustcWrapperType {
   RustcWrapper,
   RustcWorkspaceWrapper,
@@ -36,11 +38,13 @@ pub struct RustcPluginArgs<Args> {
   pub args: Args,
   /// Should we run or driver as a RUSTC_WRAPPER or a RUSTC_WORKSPACE_WRAPPER?
   pub wrapper_type: RustcWrapperType,
+  pub rustc_enabled_for_non_filtered: bool,
   /// Which crates you want to run the plugin on.
   pub filter: CrateFilter,
+  pub default_build_command: Option<CargoBuildCommand>,
 }
 
-pub trait RustcPlugin: Sized {
+pub trait RustcPlugin<T = ()>: Sized {
   /// Command-line arguments passed by the user.
   type Args: Serialize + DeserializeOwned;
   /// Returns the version of your plugin.
@@ -64,12 +68,20 @@ pub trait RustcPlugin: Sized {
   /// Optionally modify the `cargo` command that launches rustc.
   /// For example, you could pass a `--feature` flag here.
   fn modify_cargo(&self, _cargo: &mut Command, _args: &Self::Args) {}
-
   /// Executes the plugin with a set of compiler and plugin args.
   fn run(
     compiler_args: Vec<String>,
     plugin_args: Self::Args,
   ) -> rustc_interface::interface::Result<()>;
+
+  fn driver_main() {
+    driver::driver_main::<T, Self>();
+  }
+
+  ///executes right before the main cargo execution
+  fn before_execution(&mut self) {}
+  ///executes right after main cargo execution has finished. The return value used in this method is what is returned in `cli_main`
+  fn after_execution(&self) -> PluginResult<T>;
 }
 
 /// The name of the environment variable shared between the CLI and the driver.
