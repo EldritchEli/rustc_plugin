@@ -70,6 +70,7 @@ pub trait RustcPlugin<T = ()>: Sized {
   fn modify_cargo(&self, _cargo: &mut Command, _args: &Self::Args) {}
   /// Executes the plugin with a set of compiler and plugin args.
   fn run(
+    crate_name: String,
     compiler_args: Vec<String>,
     plugin_args: Self::Args,
   ) -> rustc_interface::interface::Result<()>;
