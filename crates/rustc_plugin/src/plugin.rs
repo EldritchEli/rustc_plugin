@@ -82,7 +82,7 @@ pub trait RustcPlugin<T = ()>: Sized {
   ///executes right before the main cargo execution
   fn before_execution(&mut self) {}
   ///executes right after main cargo execution has finished. The return value used in this method is what is returned in `cli_main`
-  fn after_execution(&self) -> PluginResult<T>;
+  fn after_execution(&mut self) -> PluginResult<T>;
 }
 
 /// The name of the environment variable shared between the CLI and the driver.
