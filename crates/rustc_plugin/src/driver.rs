@@ -5,13 +5,14 @@ use std::{
   process::{Command, exit},
 };
 
+use rustc_driver::{Callbacks, EXIT_FAILURE};
 use rustc_session::{EarlyDiagCtxt, config::ErrorOutputType};
 use rustc_tools_util::VersionInfo;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
-use crate::cli::{
-  MANY_SPECIFIC_CRATES, RUN_ON_ALL_CRATES, SPECIFIC_CRATE, SPECIFIC_TARGET,
-};
+use crate::{EmptyCallbacks, cli::{
+  MANY_SPECIFIC_CRATES, RUN_NORMAL_RUSTC_ON_NON_FILTERED, RUN_ON_ALL_CRATES, RUN_ON_WORKSPACE, SPECIFIC_CRATE, SPECIFIC_TARGET
+}};
 
 /// If a command-line option matches `find_arg`, then apply the predicate `pred` on its value. If
 /// true, then return it. The parameter is assumed to be either `--arg=value` or `--arg value`.
@@ -145,42 +146,60 @@ pub fn driver_main<Q,T: RustcPlugin<Q>>() {
     // or actually execute the plugin. There are two conditions for executing the plugin:
     // 1. Either we're supposed to run on all crates, or CARGO_PRIMARY_PACKAGE is set.
     // 2. --print is NOT passed, since Cargo does that to get info about rustc.
-    let primary_package = env::var("CARGO_PRIMARY_PACKAGE").is_ok();
+    let primary_package = env::var("CARGO_PRIMARY_PACKAGE").is_ok() && env::var(RUN_ON_WORKSPACE).is_ok();
     let specified_crate: Option<String> = env::var(MANY_SPECIFIC_CRATES)
       .ok()
       .map(|json_encoded| {
         let crate_list: Vec<String> = serde_json::from_str(&json_encoded)
           .expect("could not parse encoded crate_list");
+        log::debug!("list of crates to run {:?}", crate_list);
         crate_list.into_iter().find(|s| s == &crate_name)
       })
       .unwrap_or(None);
     let run_on_all_crates = env::var(RUN_ON_ALL_CRATES).is_ok();
     let normal_rustc = arg_value(&args, "--print", |_| true).is_some();
     let is_target_crate = is_target_crate(&args);
+    // build scripts need to run with regular rustc
+    let is_build_script = crate_name == "build_script_build";
+    // running driver on build scripts is not defined 
+    if is_build_script && specified_crate.is_some() {
+      eprintln!("tried to run plugin on build_script, this is not defined");
+      exit(EXIT_FAILURE)
+    }
     let run_plugin = 
     !normal_rustc && (run_on_all_crates || primary_package || specified_crate.is_some()) /*&& is_target_crate*/;
-
-    if run_plugin {
+    
+    if run_plugin  && !is_build_script {
       log::debug!(
         "Running plugin for crate {crate_name}. Relevant variables: \
-  normal_rustc={normal_rustc}, \
-  run_on_all_crates={run_on_all_crates}, \
-  primary_package={primary_package}, \
-  is_target_crate={is_target_crate}"
+         normal_rustc={normal_rustc}, \
+         run_on_all_crates={run_on_all_crates}, \
+         primary_package={primary_package}, \
+         is_target_crate={is_target_crate}, \
+         specified_crate={specified_crate:?}"
       );
       let plugin_args: T::Args =
         serde_json::from_str(&env::var(PLUGIN_ARGS).unwrap()).unwrap();
       T::run(crate_name, args, plugin_args).unwrap();
-    } else {
+      
+    } else if env::var(RUN_NORMAL_RUSTC_ON_NON_FILTERED).map(|s| s.parse() == Ok(1) ).unwrap_or(false) 
+      || is_build_script
+     {
       log::debug!(
         "Running normal Rust for crate {crate_name}. Relevant variables: \
-normal_rustc={normal_rustc}, \
-run_on_all_crates={run_on_all_crates}, \
-primary_package={primary_package}, \
-is_target_crate={is_target_crate}"
+        normal_rustc={normal_rustc}, \
+        run_on_all_crates={run_on_all_crates}, \
+        primary_package={primary_package}, \
+        is_target_crate={is_target_crate}, \
+        specified_crate={specified_crate:?} \
+        args={args:?}"
       );
       rustc_driver::run_compiler(&args, &mut DefaultCallbacks);
     }
+   else {log::debug!("skiping compilation for crate {crate_name}");
+  
+      rustc_driver::run_compiler(&args, &mut EmptyCallbacks);
+  }
   }))
 }
 

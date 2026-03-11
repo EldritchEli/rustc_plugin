@@ -12,11 +12,13 @@ use crate::{
 };
 
 pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
+pub const RUN_ON_WORKSPACE: &str = "RUSTC_PLUGIN_ON_WORKSPACE";
 pub const SPECIFIC_CRATE: &str = "SPECIFIC_CRATE";
 pub const SPECIFIC_TARGET: &str = "SPECIFIC_TARGET";
 pub const CARGO_VERBOSE: &str = "CARGO_VERBOSE";
 pub const MANY_SPECIFIC_CRATES: &str = "MANY_SPECIFIC_CRATES";
 
+pub const RUN_NORMAL_RUSTC_ON_NON_FILTERED: &str = "RUN_NORMAL_RUSTC_ON_NON_FILTERED";
 /// The top-level function that should be called in your user-facing binary.
 pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> {
   if env::args().any(|arg| arg == "-V") {
@@ -70,7 +72,7 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
   /*  if env::var(CARGO_VERBOSE).is_ok() {
     cmd.arg("-vv");
   } else {
-    cmd.arg("-q");
+    cmd.arg("-q");a
   }
   */
 
@@ -96,7 +98,9 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
         CrateFilter::AllCrates => {
           cmd.env(RUN_ON_ALL_CRATES, "");
         }
-        CrateFilter::OnlyWorkspace => {}
+        CrateFilter::OnlyWorkspace => {
+          cmd.env(RUN_ON_WORKSPACE, "");
+        }
         CrateFilter::CrateContainingFile(_) => unreachable!(),
         CrateFilter::RunOnCrates(_) => unreachable!(),
       }
@@ -111,7 +115,13 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
   let args_str = serde_json::to_string(&args.args).unwrap();
   log::debug!("{PLUGIN_ARGS}={args_str}");
   cmd.env(PLUGIN_ARGS, args_str);
-
+  cmd.env(
+    RUN_NORMAL_RUSTC_ON_NON_FILTERED,
+    match args.rustc_enabled_for_non_filtered {
+      true => "1",
+      false => "0",
+    },
+  );
   // HACK: if running on the rustc codebase, this env var needs to exist
   // for the code to compile
   if workspace_members.iter().any(|pkg| pkg.name == "rustc-main") {

@@ -5,6 +5,7 @@
 
 #![feature(rustc_private)]
 
+extern crate rustc_ast;
 extern crate rustc_driver;
 extern crate rustc_interface;
 extern crate rustc_session;
@@ -43,3 +44,14 @@ pub enum RustcPluginError {
 }
 
 pub type PluginResult<T> = std::result::Result<T, RustcPluginError>;
+
+pub struct EmptyCallbacks;
+impl rustc_driver::Callbacks for EmptyCallbacks {
+  fn after_crate_root_parsing(
+    &mut self,
+    _compiler: &rustc_interface::interface::Compiler,
+    _krate: &mut rustc_ast::Crate,
+  ) -> rustc_driver::Compilation {
+    rustc_driver::Compilation::Stop
+  }
+}
