@@ -2,6 +2,7 @@ use std::{
   env, fs,
   path::PathBuf,
   process::{Command, Stdio},
+  str::FromStr,
 };
 
 use cargo_metadata::camino::Utf8Path;
@@ -9,6 +10,7 @@ use cargo_metadata::camino::Utf8Path;
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
 use crate::{
   CrateFilter, PluginResult, RustcPluginError, build_commands::CargoBuildCommand,
+  plugin::DefaultBuildCommand,
 };
 
 pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
@@ -25,7 +27,6 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
     println!("{}", plugin.version());
     return Ok(None);
   }
-  let default_build = !env::args().any(|arg| arg.parse::<CargoBuildCommand>().is_ok());
 
   let metadata = cargo_metadata::MetadataCommand::new()
     .no_deps()
@@ -36,7 +37,14 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
   println!("plugin_subdir: {:?}", plugin_subdir);
   let target_dir = metadata.target_directory.join(plugin_subdir);
 
-  let args = plugin.args(&target_dir);
+  let mut plugin_args = plugin.args(&target_dir);
+
+  let mut args = if let Some(args) = plugin_args.args.take() {
+    args
+  } else {
+    // if there are no given args in the plugin we take the ones defined in the environment instead.
+    env::args().skip(2).collect()
+  };
 
   let mut cmd = Command::new("cargo");
   cmd.stdout(Stdio::inherit()).stderr(Stdio::inherit());
@@ -49,24 +57,32 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
     path.set_extension("exe");
   }
   // should we use rustc_wrapper or rustc_workspace_wrapper?
-  let rustc_wrapper = args.wrapper_type.as_env_var();
+  let rustc_wrapper_string = plugin_args.wrapper_type.as_env_var();
 
-  cmd.env(&rustc_wrapper, path);
-  if default_build {
-    match args.default_build_command {
-      Some(bcmd) => {
-        cmd.arg(String::from(bcmd));
-        plugin.modify_cargo(&mut cmd, &args.args);
+  cmd.env(&rustc_wrapper_string, path);
+
+  let use_default_build = !args
+    .iter()
+    .any(|arg| arg.parse::<CargoBuildCommand>().is_ok());
+
+  match &plugin_args.default_build_command {
+    Some(DefaultBuildCommand::Override(bcmd)) => {
+      if !use_default_build {
+        args.retain(|arg| CargoBuildCommand::from_str(arg).is_err());
       }
-      None => {
-        eprintln!("error: failed to find cargo build command. defaulting to check");
-        plugin.modify_cargo(&mut cmd, &args.args);
-        cmd.arg("check");
-      }
+      cmd.arg(String::from(bcmd));
     }
-  } else {
-    plugin.modify_cargo(&mut cmd, &args.args);
+    Some(DefaultBuildCommand::Default(bcmd)) if use_default_build => {
+      cmd.arg(String::from(bcmd));
+    }
+    None if use_default_build => {
+      eprintln!("error: failed to find cargo build command. defaulting to check");
+      cmd.arg("check");
+    }
+    _ => {}
   }
+  plugin.modify_cargo(&mut cmd, &args);
+
   cmd.arg("--target-dir").arg(&target_dir);
 
   /*  if env::var(CARGO_VERBOSE).is_ok() {
@@ -88,13 +104,13 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
     })
     .collect::<Vec<_>>();
 
-  match args.filter {
+  match plugin_args.filter {
     CrateFilter::CrateContainingFile(file_path) => {
       only_run_on_file(&mut cmd, file_path, &workspace_members, &target_dir);
     }
     CrateFilter::AllCrates | CrateFilter::OnlyWorkspace => {
       //cmd.arg("--all");
-      match args.filter {
+      match plugin_args.filter {
         CrateFilter::AllCrates => {
           cmd.env(RUN_ON_ALL_CRATES, "");
         }
@@ -112,12 +128,13 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
     }
   }
 
-  let args_str = serde_json::to_string(&args.args).unwrap();
+  let args_str = serde_json::to_string(&args).unwrap();
   log::debug!("{PLUGIN_ARGS}={args_str}");
   cmd.env(PLUGIN_ARGS, args_str);
+
   cmd.env(
     RUN_NORMAL_RUSTC_ON_NON_FILTERED,
-    match args.rustc_enabled_for_non_filtered {
+    match plugin_args.rustc_enabled_for_non_filtered {
       true => "1",
       false => "0",
     },

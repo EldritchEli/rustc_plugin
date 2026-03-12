@@ -68,8 +68,8 @@ impl FromStr for CargoBuildCommand {
   type Err = ParseCargoError;
 }
 
-impl From<CargoBuildCommand> for String {
-  fn from(value: CargoBuildCommand) -> Self {
+impl From<&CargoBuildCommand> for String {
+  fn from(value: &CargoBuildCommand) -> Self {
     match value {
       CargoBuildCommand::Build => "build".into(),
       CargoBuildCommand::Check => "check".into(),

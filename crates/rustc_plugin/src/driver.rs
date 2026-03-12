@@ -178,9 +178,9 @@ pub fn driver_main<Q,T: RustcPlugin<Q>>() {
          is_target_crate={is_target_crate}, \
          specified_crate={specified_crate:?}"
       );
-      let plugin_args: T::Args =
+      let plugin_args: Vec<String> =
         serde_json::from_str(&env::var(PLUGIN_ARGS).unwrap()).unwrap();
-      T::run(crate_name, args, plugin_args).unwrap();
+      T::run(crate_name, args, &plugin_args).unwrap();
       
     } else if env::var(RUN_NORMAL_RUSTC_ON_NON_FILTERED).map(|s| s.parse() == Ok(1) ).unwrap_or(false) 
       || is_build_script

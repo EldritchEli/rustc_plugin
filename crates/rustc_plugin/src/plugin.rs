@@ -33,20 +33,23 @@ pub enum CrateFilter {
 }
 
 /// Arguments from your plugin to the rustc_plugin framework.
-pub struct RustcPluginArgs<Args> {
-  /// Whatever CLI arguments you want to pass along.
-  pub args: Args,
+pub struct RustcPluginArgs {
+  /// Whatever CLI arguments you want to pass along. if given none, the plugin will take the arguments straight from the environment.
+  /// if a build command is given in args and defaultbuildcommand is `Some(Override(cmd))` the build command given will be ignored
+  pub args: Option<Vec<String>>,
   /// Should we run or driver as a RUSTC_WRAPPER or a RUSTC_WORKSPACE_WRAPPER?
   pub wrapper_type: RustcWrapperType,
   pub rustc_enabled_for_non_filtered: bool,
   /// Which crates you want to run the plugin on.
   pub filter: CrateFilter,
-  pub default_build_command: Option<CargoBuildCommand>,
+  pub default_build_command: Option<DefaultBuildCommand>,
 }
 
+pub enum DefaultBuildCommand {
+  Default(CargoBuildCommand),
+  Override(CargoBuildCommand),
+}
 pub trait RustcPlugin<T = ()>: Sized {
-  /// Command-line arguments passed by the user.
-  type Args: Serialize + DeserializeOwned;
   /// Returns the version of your plugin.
   ///
   /// A sensible default is your plugin's Cargo version:
@@ -64,15 +67,15 @@ pub trait RustcPlugin<T = ()>: Sized {
   fn driver_name(&self) -> Cow<'static, str>;
 
   /// Parses and returns the CLI arguments for the plugin.
-  fn args(&self, target_dir: &Utf8Path) -> RustcPluginArgs<Self::Args>;
+  fn args(&self, target_dir: &Utf8Path) -> RustcPluginArgs;
   /// Optionally modify the `cargo` command that launches rustc.
   /// For example, you could pass a `--feature` flag here.
-  fn modify_cargo(&self, _cargo: &mut Command, _args: &Self::Args) {}
+  fn modify_cargo(&self, _cargo: &mut Command, _args: &Vec<String>) {}
   /// Executes the plugin with a set of compiler and plugin args.
   fn run(
     crate_name: String,
     compiler_args: Vec<String>,
-    plugin_args: Self::Args,
+    plugin_args: &Vec<String>,
   ) -> rustc_interface::interface::Result<()>;
 
   fn driver_main() {

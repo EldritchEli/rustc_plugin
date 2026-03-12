@@ -31,6 +31,8 @@ mod cli;
 mod driver;
 mod plugin;
 
+pub use build_commands::{CargoBuildCommand, ParseCargoError};
+pub use plugin::DefaultBuildCommand;
 #[derive(Error, Debug)]
 pub enum RustcPluginError {
   #[error("got io error: {0}")]
