@@ -10,9 +10,14 @@ use rustc_session::{EarlyDiagCtxt, config::ErrorOutputType};
 use rustc_tools_util::VersionInfo;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
-use crate::{EmptyCallbacks, cli::{
-  MANY_SPECIFIC_CRATES, RUN_NORMAL_RUSTC_ON_NON_FILTERED, RUN_ON_ALL_CRATES, RUN_ON_WORKSPACE, SPECIFIC_CRATE, SPECIFIC_TARGET
-}};
+use crate::{
+  EmptyCallbacks,
+  cli::{
+    MANY_SPECIFIC_CRATES, RUN_NORMAL_RUSTC_ON_NON_FILTERED, RUN_ON_ALL_CRATES,
+    RUN_ON_WORKSPACE, SPECIFIC_CRATE, SPECIFIC_TARGET,
+  },
+  plugin::RustcEnabledForNonFiltered,
+};
 
 /// If a command-line option matches `find_arg`, then apply the predicate `pred` on its value. If
 /// true, then return it. The parameter is assumed to be either `--arg=value` or `--arg value`.
@@ -102,7 +107,7 @@ struct DefaultCallbacks;
 impl rustc_driver::Callbacks for DefaultCallbacks {}
 
 /// The top-level function that should be called by your internal driver binary.
-pub fn driver_main<Q,T: RustcPlugin<Q>>() {
+pub fn driver_main<Q, T: RustcPlugin<Q>>() {
   //println!("runnin main driver");
   let early_dcx = EarlyDiagCtxt::new(ErrorOutputType::default());
   rustc_driver::init_rustc_env_logger(&early_dcx);
@@ -146,7 +151,8 @@ pub fn driver_main<Q,T: RustcPlugin<Q>>() {
     // or actually execute the plugin. There are two conditions for executing the plugin:
     // 1. Either we're supposed to run on all crates, or CARGO_PRIMARY_PACKAGE is set.
     // 2. --print is NOT passed, since Cargo does that to get info about rustc.
-    let primary_package = env::var("CARGO_PRIMARY_PACKAGE").is_ok() && env::var(RUN_ON_WORKSPACE).is_ok();
+    let primary_package =
+      env::var("CARGO_PRIMARY_PACKAGE").is_ok() && env::var(RUN_ON_WORKSPACE).is_ok();
     let specified_crate: Option<String> = env::var(MANY_SPECIFIC_CRATES)
       .ok()
       .map(|json_encoded| {
@@ -157,22 +163,39 @@ pub fn driver_main<Q,T: RustcPlugin<Q>>() {
       })
       .unwrap_or(None);
     let run_on_all_crates = env::var(RUN_ON_ALL_CRATES).is_ok();
-    let normal_rustc = arg_value(&args, "--print", |_| true).is_some();
+
+    let is_build_script = crate_name == "build_script_build";
+    let run_normal_rustc_hard =
+      arg_value(&args, "--print", |_| true).is_some() || is_build_script;
+    let run_normal_rustc_soft = std::env::var(RUN_NORMAL_RUSTC_ON_NON_FILTERED)
+      .map(
+        |s| match serde_json::from_str(&s).expect("should always deserialize") {
+          RustcEnabledForNonFiltered::Yes => true,
+          RustcEnabledForNonFiltered::No => false,
+          RustcEnabledForNonFiltered::Only(vec) => vec.contains(&crate_name),
+        },
+      )
+      .unwrap_or_else(|e| {
+        panic!(
+          "var {} should be set. got error {:?}",
+          RUN_NORMAL_RUSTC_ON_NON_FILTERED, e
+        )
+      });
+
     let is_target_crate = is_target_crate(&args);
     // build scripts need to run with regular rustc
-    let is_build_script = crate_name == "build_script_build";
-    // running driver on build scripts is not defined 
+    // running driver on build scripts is not defined
     if is_build_script && specified_crate.is_some() {
       eprintln!("tried to run plugin on build_script, this is not defined");
       exit(EXIT_FAILURE)
-    }
-    let run_plugin = 
-    !normal_rustc && (run_on_all_crates || primary_package || specified_crate.is_some()) /*&& is_target_crate*/;
-    
-    if run_plugin  && !is_build_script {
+    };
+
+    let run_plugin = !run_normal_rustc_hard && (run_on_all_crates || primary_package || specified_crate.is_some()) /*&& is_target_crate*/;
+    if run_plugin {
       log::debug!(
         "Running plugin for crate {crate_name}. Relevant variables: \
-         normal_rustc={normal_rustc}, \
+         normal_rustc_soft={run_normal_rustc_soft}, \
+         normal_rustc_hard={run_normal_rustc_hard}, \
          run_on_all_crates={run_on_all_crates}, \
          primary_package={primary_package}, \
          is_target_crate={is_target_crate}, \
@@ -181,25 +204,23 @@ pub fn driver_main<Q,T: RustcPlugin<Q>>() {
       let plugin_args: Vec<String> =
         serde_json::from_str(&env::var(PLUGIN_ARGS).unwrap()).unwrap();
       T::run(crate_name, args, &plugin_args).unwrap();
-      
-    } else if env::var(RUN_NORMAL_RUSTC_ON_NON_FILTERED).map(|s| s.parse() == Ok(1) ).unwrap_or(false) 
-      || is_build_script
-     {
+    } else if run_normal_rustc_hard || run_normal_rustc_soft {
       log::debug!(
         "Running normal Rust for crate {crate_name}. Relevant variables: \
-        normal_rustc={normal_rustc}, \
-        run_on_all_crates={run_on_all_crates}, \
-        primary_package={primary_package}, \
-        is_target_crate={is_target_crate}, \
-        specified_crate={specified_crate:?} \
-        args={args:?}"
+         normal_rustc_soft={run_normal_rustc_soft}, \
+         normal_rustc_hard={run_normal_rustc_hard}, \
+         run_on_all_crates={run_on_all_crates}, \
+         primary_package={primary_package}, \
+         is_target_crate={is_target_crate}, \
+         specified_crate={specified_crate:?} \
+         args={args:?}"
       );
       rustc_driver::run_compiler(&args, &mut DefaultCallbacks);
-    }
-   else {log::debug!("skiping compilation for crate {crate_name}");
-  
+    } else {
+      log::debug!("skiping compilation for crate {crate_name}");
+
       rustc_driver::run_compiler(&args, &mut EmptyCallbacks);
-  }
+    }
   }))
 }
 

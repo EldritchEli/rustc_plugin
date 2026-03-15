@@ -1,7 +1,7 @@
 use std::{borrow::Cow, path::PathBuf, process::Command};
 
 use cargo_metadata::camino::Utf8Path;
-use serde::{Serialize, de::DeserializeOwned};
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 
 use crate::{PluginResult, build_commands::CargoBuildCommand, driver};
 
@@ -32,6 +32,13 @@ pub enum CrateFilter {
   RunOnCrates(Vec<String>),
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum RustcEnabledForNonFiltered {
+  Yes,
+  No,
+  Only(Vec<String>),
+}
+
 /// Arguments from your plugin to the rustc_plugin framework.
 pub struct RustcPluginArgs {
   /// Whatever CLI arguments you want to pass along. if given none, the plugin will take the arguments straight from the environment.
@@ -39,7 +46,7 @@ pub struct RustcPluginArgs {
   pub args: Option<Vec<String>>,
   /// Should we run or driver as a RUSTC_WRAPPER or a RUSTC_WORKSPACE_WRAPPER?
   pub wrapper_type: RustcWrapperType,
-  pub rustc_enabled_for_non_filtered: bool,
+  pub rustc_enabled_for_non_filtered: RustcEnabledForNonFiltered,
   /// Which crates you want to run the plugin on.
   pub filter: CrateFilter,
   pub default_build_command: Option<DefaultBuildCommand>,

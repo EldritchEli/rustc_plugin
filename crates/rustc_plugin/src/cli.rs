@@ -9,8 +9,9 @@ use cargo_metadata::camino::Utf8Path;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
 use crate::{
-  CrateFilter, PluginResult, RustcPluginError, build_commands::CargoBuildCommand,
-  plugin::DefaultBuildCommand,
+  CrateFilter, PluginResult, RustcPluginError,
+  build_commands::CargoBuildCommand,
+  plugin::{DefaultBuildCommand, RustcEnabledForNonFiltered},
 };
 
 pub const RUN_ON_ALL_CRATES: &str = "RUSTC_PLUGIN_ALL_TARGETS";
@@ -134,10 +135,8 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
 
   cmd.env(
     RUN_NORMAL_RUSTC_ON_NON_FILTERED,
-    match plugin_args.rustc_enabled_for_non_filtered {
-      true => "1",
-      false => "0",
-    },
+    serde_json::to_string(&plugin_args.rustc_enabled_for_non_filtered)
+      .expect("should always be able to serialize this"),
   );
   // HACK: if running on the rustc codebase, this env var needs to exist
   // for the code to compile

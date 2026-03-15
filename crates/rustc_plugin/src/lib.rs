@@ -16,7 +16,9 @@ pub use build::build_main;
 pub use cargo_metadata::camino::Utf8Path;
 pub use cli::cli_main;
 pub use driver::driver_main;
-pub use plugin::{CrateFilter, RustcPlugin, RustcPluginArgs, RustcWrapperType};
+pub use plugin::{
+  CrateFilter, RustcEnabledForNonFiltered, RustcPlugin, RustcPluginArgs, RustcWrapperType,
+};
 #[doc(hidden)]
 pub use thiserror::Error;
 
