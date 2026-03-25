@@ -6,6 +6,7 @@ use std::{
 };
 
 use cargo_metadata::camino::Utf8Path;
+use rustc_tools_util::VersionInfo;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
 use crate::{
@@ -299,6 +300,8 @@ fn only_run_on_file(
     }
     .replace('-', "_"),
   );
+
+  use rustc_tools_util::VersionInfo;
   cmd.env(SPECIFIC_TARGET, match kind {
     CompileKind::Bench | CompileKind::Example => "bin",
     _ => kind_str,

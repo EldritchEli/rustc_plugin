@@ -5,7 +5,7 @@ use std::{
   process::{Command, exit},
 };
 
-use rustc_driver::{Callbacks, EXIT_FAILURE};
+use rustc_driver::EXIT_FAILURE;
 use rustc_session::{EarlyDiagCtxt, config::ErrorOutputType};
 use rustc_tools_util::VersionInfo;
 
@@ -124,9 +124,18 @@ pub fn driver_main<Q, T: RustcPlugin<Q>>() {
       .to_string();
     let (have_sys_root_arg, sys_root) = get_sysroot(&orig_args);
 
+    let version_info = Command::new("rustc")
+      .arg("--version")
+      .output()
+      .expect("rustc --version failed")
+      .stdout;
+    let version_info =
+      String::from_utf8(version_info).expect("rustc --version stdout was not valid utf8");
+    log::debug!("rustc version info: {}", version_info);
     if orig_args.iter().any(|a| a == "--version" || a == "-V") {
-      let version_info = rustc_tools_util::get_version_info!();
-      println!("{version_info}");
+      //print!("rustc 1.9.0");
+      println!("{}", version_info);
+
       exit(0);
     }
 
