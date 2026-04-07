@@ -1,0 +1,1 @@
+Error: could not start server because the socket file is occupied. Please check if "/var/folders/2k/rsdldn215hv7p_m17v3wmzgc0000gn/T/"/tmp.sock is in use by another process and try again.

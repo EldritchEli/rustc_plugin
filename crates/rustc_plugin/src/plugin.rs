@@ -93,6 +93,8 @@ pub trait RustcPlugin<T = ()>: Sized {
   fn before_execution(&mut self) {}
   ///executes right after main cargo execution has finished. The return value used in this method is what is returned in `cli_main`
   fn after_execution(&mut self) -> PluginResult<T>;
+  /// `on_failure` runs whenever a rustc or rustc_plugin instance returns an exitcode other than 0
+  fn on_failure(&mut self) {}
 }
 
 /// The name of the environment variable shared between the CLI and the driver.

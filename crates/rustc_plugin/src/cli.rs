@@ -153,6 +153,7 @@ pub fn cli_main<T, R: RustcPlugin<T>>(mut plugin: R) -> PluginResult<Option<T>> 
       Err(e) => Err(e),
     }
   } else {
+    plugin.on_failure();
     Err(RustcPluginError::ExitCode(
       exit_status.code().expect("expected an exit code"),
     ))
