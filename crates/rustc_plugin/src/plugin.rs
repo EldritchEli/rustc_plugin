@@ -1,7 +1,7 @@
 use std::{borrow::Cow, path::PathBuf, process::Command};
 
 use cargo_metadata::camino::Utf8Path;
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
+use serde::{Deserialize, Serialize};
 
 use crate::{PluginResult, build_commands::CargoBuildCommand, driver};
 
@@ -85,8 +85,8 @@ pub trait RustcPlugin<T = ()>: Sized {
     plugin_args: &Vec<String>,
   ) -> rustc_interface::interface::Result<()>;
 
-  fn driver_main() {
-    driver::driver_main::<T, Self>();
+  fn driver_main() -> std::process::ExitCode {
+    driver::driver_main::<T, Self>()
   }
 
   ///executes right before the main cargo execution

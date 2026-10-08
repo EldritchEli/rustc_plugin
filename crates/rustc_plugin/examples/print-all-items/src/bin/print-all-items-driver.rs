@@ -1,6 +1,8 @@
 #![feature(rustc_private)]
 
-fn main() {
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
   env_logger::init();
-  rustc_plugin::driver_main(print_all_items::PrintAllItemsPlugin);
+  rustc_plugin::driver_main::<(), print_all_items::PrintAllItemsPlugin>()
 }

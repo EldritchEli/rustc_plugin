@@ -2,12 +2,11 @@ use std::{
   env,
   ops::Deref,
   path::{Path, PathBuf},
-  process::{Command, exit},
+  process::{Command, ExitCode, exit},
 };
 
 use rustc_driver::EXIT_FAILURE;
 use rustc_session::{EarlyDiagCtxt, config::ErrorOutputType};
-use rustc_tools_util::VersionInfo;
 
 use super::plugin::{PLUGIN_ARGS, RustcPlugin};
 use crate::{
@@ -107,17 +106,17 @@ struct DefaultCallbacks;
 impl rustc_driver::Callbacks for DefaultCallbacks {}
 
 /// The top-level function that should be called by your internal driver binary.
-pub fn driver_main<Q, T: RustcPlugin<Q>>() {
+pub fn driver_main<Q, T: RustcPlugin<Q>>() -> ExitCode {
   //println!("runnin main driver");
   let early_dcx = EarlyDiagCtxt::new(ErrorOutputType::default());
   rustc_driver::init_rustc_env_logger(&early_dcx);
-  exit(rustc_driver::catch_with_exit_code(move || {
+  rustc_driver::catch_with_exit_code(move || {
     let mut orig_args: Vec<String> = env::args().collect();
     let crate_name = arg_value(&orig_args, "--crate-name", |_| true)
       .unwrap_or_else(|| {
         log::error!(
           "no crate name found. where the original arguments passes where: {:?}",
-          &orig_args
+          orig_args
         );
         "NO_CRATE_NAME_FOUND"
       })
@@ -224,13 +223,13 @@ pub fn driver_main<Q, T: RustcPlugin<Q>>() {
          specified_crate={specified_crate:?} \
          args={args:?}"
       );
-      rustc_driver::run_compiler(&args, &mut DefaultCallbacks);
+      rustc_driver::compiler_entrypoint(&args, &mut DefaultCallbacks);
     } else {
       log::debug!("skiping compilation for crate {crate_name}");
 
-      rustc_driver::run_compiler(&args, &mut EmptyCallbacks);
+      rustc_driver::compiler_entrypoint(&args, &mut EmptyCallbacks);
     }
-  }))
+  })
 }
 
 fn is_target_crate(args: &[String]) -> bool {

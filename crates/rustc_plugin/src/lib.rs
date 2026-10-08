@@ -24,7 +24,7 @@ pub use thiserror::Error;
 
 /// The toolchain channel that this version of rustc_plugin was built with.
 ///
-/// For example, `nightly-2025-08-20`
+/// For example, `nightly-2026-10-06`
 pub const CHANNEL: &str = env!("RUSTC_CHANNEL");
 
 mod build;
@@ -51,6 +51,14 @@ pub type PluginResult<T> = std::result::Result<T, RustcPluginError>;
 
 pub struct EmptyCallbacks;
 impl rustc_driver::Callbacks for EmptyCallbacks {
+  fn config(&mut self, config: &mut rustc_interface::interface::Config) {
+    // Clear output types so rustc does not emit any artifacts (rmeta, rlib, dep-info).
+    // Without this, the pipelined metadata pass (-Z embed-metadata=no) would still
+    // produce files that make cargo think the crate is up-to-date, preventing the
+    // substitution pass from re-compiling it.
+    config.opts.output_types = rustc_session::config::OutputTypes::new(&[]);
+  }
+
   fn after_crate_root_parsing(
     &mut self,
     _compiler: &rustc_interface::interface::Compiler,

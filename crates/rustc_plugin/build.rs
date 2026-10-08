@@ -1,4 +1,4 @@
-const DEFAULT_CHANNEL: &str = "nightly-2025-08-20";
+const DEFAULT_CHANNEL: &str = "nightly-2026-10-06";
 
 fn main() {
   let toolchain_toml = include_str!("rust-toolchain.toml");
